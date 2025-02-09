@@ -1,6 +1,4 @@
-import Image from "next/image";
-import Link from "next/link";
-import Menu from "@mui/icons-material/Menu";
+
 import YouTube from "@/components/Youtube_video"
 import Header from "@/components/Header"
 import Card from "@/components/Card"
