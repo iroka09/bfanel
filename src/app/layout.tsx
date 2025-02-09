@@ -1,5 +1,7 @@
 import { React } from "react";
 import type { Metadata } from "next";
+import Script from "next/script"
+import Events from "@/components/Events"
 import "./globals.css";
 /*
 import { Geist, Geist_Mono } from "next/font/google";
@@ -33,6 +35,13 @@ export default function RootLayout({
         className="p-0 m-0 dark:bg-slate-900/95 dark:text-white/90"
       >
         {children}
+        <Events/>
+        {process.env.NODE_ENV === "development" &&
+          <Script
+            src="/eruda.js"
+            strategy="beforeInteractive"
+          />
+        }
       </body>
     </html>
   );

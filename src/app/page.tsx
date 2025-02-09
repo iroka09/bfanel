@@ -1,6 +1,7 @@
 
 import YouTube from "@/components/Youtube_video"
 import Header from "@/components/Header"
+import Image from "next/image"
 import Card from "@/components/Card"
 
 
@@ -13,16 +14,17 @@ export default function Home() {
       {/*" Hero Section "*/}
       <section className="flex flex-col space-y-5 md:flex-row bg-primary py-20 md:px-5 md:gap-2">
         <div className="container md:px-5 text-white text-center md:pt-5">
-          <h2 className="text-4xl font-bold">Your <span className="text-cyan-200">Trusted</span> Partner in Electrical & Plumbing Piping Systems</h2>
+          <img src="/bfanel_logo.png" className="block mx-auto mb-2" />
+          <h2 className="text-4xl font-bold">Your <span className="text-cyan-400">Trusted</span> Partner in Electrical & Plumbing Piping Systems</h2>
           <p className="mt-4 text-lg">Located at Amaebu in Orsu LGA, Imo State</p>
         </div>
-        <div>
-          <img src="/bfanel.jpg" className="w-full" />
+        <div className="relative aspect-square w-full" >
+          <Image src="/bfanel.jpg" alt="Bfanel pipes sample" className="absolute inset-0 object-contain" fill />
         </div>
       </section>
 
       {/*" About Us "*/}
-      <section id="about" className="pt-16 pb-10">
+      <section id="about" className="py-16">
         <div className="container mx-auto">
           <h2 className="text-3xl font-bold text-primary mb-6">About Us</h2>
           <p className="text-lg leading-relaxed">
@@ -32,7 +34,7 @@ export default function Home() {
       </section>
 
       {/*" Video "*/}
-      <section id="products" className="mb-3">
+      <section id="video">
         <YouTube
           id="Bkg9yt2FJGc"
           title="B-Fanel Industries"
@@ -40,16 +42,16 @@ export default function Home() {
       </section>
 
       {/*" Products "*/}
-      <section id="products" className="bg-gray-100 dark:bg-slate-900 dark:bg-black py-16">
+      <section id="products" className="bg-cyan-400  text-slate-900/90 py-16">
         <div className="container mx-auto">
-          <h2 className="text-3xl font-bold text-primary mb-6">Our Products</h2>
+          <h2 className="text-3xl font-bold text-slate-900 mb-6">Our Products</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <Card>
-              <h3 className="text-xl font-bold text-primary">Plumbing Pipes</h3>
+              <h3 className="text-xl font-bold text-slate-900">Plumbing Pipes</h3>
               <p className="mt-2">High-quality pipes designed for efficient water flow and plumbing systems.</p>
             </Card>
             <Card>
-              <h3 className="text-xl font-bold text-primary">Electrical Conduit Pipes</h3>
+              <h3 className="text-xl font-bold text-slate-900">Electrical Conduit Pipes</h3>
               <p className="mt-2">Durable pipes for safe and efficient electrical wiring installations.</p>
             </Card>
           </div>
@@ -96,7 +98,7 @@ export default function Home() {
       </section>
 
       {/*" Careers "*/}
-      <section className="bg-cyan-200 text-slate-900/90 py-16">
+      <section className="bg-cyan-400 text-slate-900/90 py-16">
         <div className="container mx-auto">
           <h2 className="text-3xl font-bold text-slate-900 mb-6">Join Our Team</h2>
           <p className="text-lg">
@@ -106,7 +108,7 @@ export default function Home() {
       </section>
 
       {/*" Blog "*/}
-      <section className="py-16">
+      <section className="py-16 bg-gray-100 dark:bg-slate-900">
         <div className="container mx-auto">
           <h2 className="text-3xl font-bold text-primary mb-6">Latest News</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">

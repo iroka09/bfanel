@@ -9,7 +9,7 @@ export default function () {
   const [inCollapse, setInCollapse] = useState(false)
   return (<>
     <header className="container bg-primary pt-3 text-white/80 flex justify-between items-center gap-2 min-w-full">
-      <h1 className="text-2xl font-bold">B-Fanel</h1>
+      <a href="/"><h1 className="text-2xl font-bold">B-Fanel</h1></a>
       <div className="hidden md:block">
         <Nav />
       </div>
@@ -19,7 +19,7 @@ export default function () {
         </button>
       </div>
     </header>
-    <Collapse in={inCollapse} unmountOnExit className="bg-cyan-200">
+    <Collapse in={inCollapse} unmountOnExit className="bg-cyan-400">
       <div className="md:hidden mobile p-5">
         <Nav />
       </div>
@@ -35,7 +35,7 @@ function Nav() {
           <li key={i}>
             <a
               href={`#${x.split(/\s+/)[0].toLowerCase()}`}
-              className="block hover:bg-slate-100 text-slate-900 px-0 [.mobile_&]:font-bold [.mobile_&]:py-3 [.mobile_&]:px-2"
+              className="block hover:[.mobile_&]:bg-black/10 text-slate-900 text-center px-0 [.mobile_&]:font-bold [.mobile_&]:py-3 [.mobile_&]:px-2 text-xl"
             >
               {x}
             </a>
