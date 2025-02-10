@@ -1,15 +1,16 @@
 "use client"
 
-import { useState } from "react"
+import { useState, ReactNode } from "react"
+import Link from "next/link"
 import Collapse from "@mui/material/Collapse"
 import Menu from "@mui/icons-material/Menu"
 import Close from "@mui/icons-material/Close"
 
-export default function () {
+export default function App(): ReactNode {
   const [inCollapse, setInCollapse] = useState(false)
   return (<>
-    <header className="container bg-primary pt-3 text-white/80 flex justify-between items-center gap-2 min-w-full">
-      <a href="/"><h1 className="text-2xl font-bold">B-Fanel</h1></a>
+    <header className="container bg-primary py-4 text-white/80 flex justify-between items-center gap-2 min-w-full">
+      <Link href="/"><h1 className="text-3xl font-bold">B-Fanel</h1></Link>
       <div className="hidden md:block">
         <Nav />
       </div>
@@ -27,18 +28,18 @@ export default function () {
   </>)
 }
 
-function Nav() {
+function Nav(): ReactNode {
   return (
     <nav>
-      <ul className="flex flex-col md:flex-row md:space-x-5 spsce-y-5">
-        {"About Us, Products, Services, Contact".split(/,\s*/).map((x, i) => (
+      <ul className="flex flex-col md:flex-row md:space-x-5">
+        {"About Us, Products, Services, FAQs, Contact".split(/,\s*/).map((x, i) => (
           <li key={i}>
-            <a
+            <Link
               href={`#${x.split(/\s+/)[0].toLowerCase()}`}
-              className="block hover:[.mobile_&]:bg-black/10 text-slate-900 text-center px-0 [.mobile_&]:font-bold [.mobile_&]:py-3 [.mobile_&]:px-2 text-xl"
+              className="block hover:[.mobile_&]:bg-black/10 [.mobile_&]:text-slate-900 text-center [.mobile_&]:font-bold [.mobile_&]:py-3 [.mobile_&]:text-xl"
             >
               {x}
-            </a>
+            </Link>
           </li>
         ))}
       </ul>

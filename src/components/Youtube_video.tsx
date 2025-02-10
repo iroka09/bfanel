@@ -6,15 +6,16 @@ import YouTube from "react-youtube"
 import Refresh from "@mui/icons-material/Refresh"
 
 
-export default function ({ id, title }: { id: string, title: string }) {
+export default function App({ id, title }: { id: string, title: string }) {
   const [readyState, setReadyState] = useState<"loading" | "success" | "error">("loading")
   const [videoObject, setVideoObject] = useState<null | object>(null)
   const { inView, ref } = useInView({ threshold: 0.5, triggerOnce: false })
   const handleRefresh = () => location.reload()
   useEffect(() => {
     if (!videoObject) return
-    inView ? videoObject.playVideo() : videoObject.pauseVideo()
-  }, [inView])
+    if (inView) videoObject.playVideo()
+    else videoObject.pauseVideo()
+  }, [inView, videoObject])
   return (
     <div
       ref={ref}
@@ -29,7 +30,7 @@ export default function ({ id, title }: { id: string, title: string }) {
           setVideoObject(event.target)
           setReadyState("success")
         }}
-        onError={event => {
+        onError={() => {
           setReadyState("error")
         }}
         opts={{

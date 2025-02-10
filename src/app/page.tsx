@@ -2,7 +2,10 @@
 import YouTube from "@/components/Youtube_video"
 import Header from "@/components/Header"
 import Image from "next/image"
+import Link from "next/link"
 import Card from "@/components/Card"
+import Faqs from "@/components/Faqs"
+import ContactForm from "@/components/ContactForm"
 
 
 export default function Home() {
@@ -12,9 +15,9 @@ export default function Home() {
       <Header />
 
       {/*" Hero Section "*/}
-      <section className="flex flex-col space-y-5 md:flex-row bg-primary py-20 md:px-5 md:gap-2">
+      <section className="flex flex-col space-y-5 md:flex-row bg-primary pt-2 pb-10 md:px-5 md:gap-2">
         <div className="container md:px-5 text-white text-center md:pt-5">
-          <img src="/bfanel_logo.png" className="block mx-auto mb-2" />
+          <Image src="/bfanel_logo.png" alt="bfanel logo" className="block mx-auto mb-2" width="300" height="100" />
           <h2 className="text-4xl font-bold">Your <span className="text-cyan-400">Trusted</span> Partner in Electrical & Plumbing Piping Systems</h2>
           <p className="mt-4 text-lg">Located at Amaebu in Orsu LGA, Imo State</p>
         </div>
@@ -34,7 +37,7 @@ export default function Home() {
       </section>
 
       {/*" Video "*/}
-      <section id="video">
+      <section id="video" className="md:mb-5">
         <YouTube
           id="Bkg9yt2FJGc"
           title="B-Fanel Industries"
@@ -45,7 +48,7 @@ export default function Home() {
       <section id="products" className="bg-cyan-400  text-slate-900/90 py-16">
         <div className="container mx-auto">
           <h2 className="text-3xl font-bold text-slate-900 mb-6">Our Products</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="flex flex-wrap gap-3 md:*:max-w-[45%]">
             <Card>
               <h3 className="text-xl font-bold text-slate-900">Plumbing Pipes</h3>
               <p className="mt-2">High-quality pipes designed for efficient water flow and plumbing systems.</p>
@@ -102,25 +105,16 @@ export default function Home() {
         <div className="container mx-auto">
           <h2 className="text-3xl font-bold text-slate-900 mb-6">Join Our Team</h2>
           <p className="text-lg">
-            We're always looking for talented individuals to join our growing team. Send your CV to careers@bfanelindustries.com.
+            We're always looking for talented individuals to join our growing team. Send your CV to <Link href="mailto:careers@bfanelindustries.com" className="text-blue-900 underline underline-offset-2">careers@bfanelindustries.com</Link>
           </p>
         </div>
       </section>
 
-      {/*" Blog "*/}
-      <section className="py-16 bg-gray-100 dark:bg-slate-900">
+      {/*" Faqs "*/}
+      <section id="faqs" className="py-16 bg-gray-100 dark:bg-slate-900">
         <div className="container mx-auto">
-          <h2 className="text-3xl font-bold text-primary mb-6">Latest News</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <Card>
-              <h3 className="text-xl font-bold text-primary">5 Tips for Better Plumbing Systems</h3>
-              <p className="mt-2">Learn how to maximize the efficiency of your plumbing with these expert tips.</p>
-            </Card>
-            <Card>
-              <h3 className="text-xl font-bold text-primary">Why Choose B-Fanel Pipes?</h3>
-              <p className="mt-2">Discover what makes our products the best choice for your projects.</p>
-            </Card>
-          </div>
+          <h2 className="text-3xl font-bold text-primary mb-6">Frequently Asked Questions</h2>
+          <Faqs />
         </div>
       </section>
 
@@ -131,25 +125,7 @@ export default function Home() {
           <p className="mb-4">Address: Amaebu, Orsu LGA, Imo State</p>
           <p className="mb-4">Phone: <a href="tel:+234-703-845-0694" className="underline underline-offset-2">+234-703-845-0694</a></p>
           <p className="mb-4">Email: info@bfanelindustries.com</p>
-          <form className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div>
-              <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-500">Your Name</label>
-              <input type="text" id="name" name="name" className="mt-1 block w-full border-gray-300 rounded-md shadow-sm dark:bg-black/20 dark:shadow-none" />
-            </div>
-            <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-500">Your Email</label>
-              <input type="email" id="email" name="email" className="mt-1 block w-full border-gray-300 rounded-md shadow-sm dark:bg-black/20" />
-            </div>
-            <div className="md:col-span-2">
-              <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-500">Your Message</label>
-              <textarea id="message" name="message" rows="4" className="mt-1 block w-full border-gray-300 rounded-md shadow-sm dark:bg-black/20"></textarea>
-            </div>
-            <div className="md:col-span-2">
-              <button type="submit" className="px-6 py-3 bg-primary text-white font-bold rounded-md shadow hover:bg-blue-800">
-                Send Message
-              </button>
-            </div>
-          </form>
+          <ContactForm />
         </div>
       </section>
 

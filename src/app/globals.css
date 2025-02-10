@@ -31,3 +31,7 @@ body {
 .text-primary {
   @apply text-slate-900 dark:text-white
 }
+
+.text-secondary {
+  @apply text-slate-900/90 dark:text-white/90
+}
