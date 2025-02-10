@@ -1,9 +1,7 @@
 "use client"
 
 import React, { useState } from "react";
-import Accordion from "@mui/material/Accordion";
-import AccordionSummary from "@mui/material/AccordionSummary";
-import AccordionDetails from "@mui/material/AccordionDetails";
+import Collapse from "@mui/material/Collapse";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import ExpandLessIcon from "@mui/icons-material/ExpandLess";
 import Card from "@/components/Card"
@@ -47,25 +45,19 @@ export default function FAQs() {
           key={index}
           className="mb-2"
         >
-          <Accordion
-            expanded={expanded === index}
-            onChange={() => handleExpand(index)}
-            className="bg-transparent border-none rounded-none shadow-none"
+          <div
+            onClick={() => handleExpand(index)}
+            className="flex justify-between gap-3"
           >
-            <AccordionSummary
-              expandIcon={
-                <span className="*:text-slate-900 dark:*:text-white text-3xl">
-                  {expanded === index ? <ExpandLessIcon /> : <ExpandMoreIcon />
-                  }
-                </span>
+            <h2 className="text-primary font-bold text-lg">{faq.question}</h2>
+            <span className="*:text-slate-900 dark:*:text-white text-3xl">
+              {expanded === index ? <ExpandLessIcon /> : <ExpandMoreIcon />
               }
-            >
-              <h2 className="text-primary font-bold text-lg">{faq.question}</h2>
-            </AccordionSummary>
-            <AccordionDetails>
-              <span className="text-secondary">{faq.answer}</span>
-            </AccordionDetails>
-          </Accordion>
+            </span>
+          </div>
+          <Collapse in={expanded === index} unmountOnExit>
+            <span className="block mt-4 text-secondary">{faq.answer}</span>
+          </Collapse>
         </Card>
       ))}
     </div>
