@@ -27,7 +27,7 @@ export function generateMetadata(): Metadata {
     openGraph: {
       images: [
         {
-          url: "/bfanel_logo.png",
+          url: "/bfanel.jpg",
           alt: "website's logo"
         }
       ],
@@ -43,7 +43,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${assistant.className}`}>
-      <body className="font-sans p-0 m-0 dark:bg-slate-900/95 dark:text-white/90"   >
+      <body className="font-sans p-0 m-0 dark:bg-slate-900/90 dark:text-white/90"   >
         {children}
         <Events />
         {process.env.NODE_ENV === "development" && (

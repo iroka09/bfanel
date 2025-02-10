@@ -7,8 +7,6 @@ import ExpandLessIcon from "@mui/icons-material/ExpandLess";
 import Card from "@/components/Card"
 
 
-
-
 const faqs = [
   { question: "What types of pipes do you manufacture?", answer: "We manufacture plumbing pipes and electrical conduit pipes for various applications." },
   { question: "Where are you located?", answer: "We are located in Amaebu, Orsu LGA, Imo State, Nigeria." },
@@ -49,19 +47,19 @@ export default function FAQs() {
             onClick={() => handleExpand(index)}
             className="flex justify-between gap-3"
           >
-            <h2 className="text-primary font-bold text-lg">{faq.question}</h2>
-            <span className="*:text-slate-900 dark:*:text-white text-3xl">
+            <h2 className="text-slate-800 font-bold text-lg">{faq.question}</h2>
+            <span className="*:text-slate-900 text-3xl">
               {expanded === index ? <ExpandLessIcon /> : <ExpandMoreIcon />
               }
             </span>
           </div>
           <Collapse in={expanded === index} unmountOnExit>
-            <span className="block mt-4 text-secondary">{faq.answer}</span>
+            <span className="block mt-4 text-slate-900/80">{faq.answer}</span>
           </Collapse>
         </Card>
       ))}
     </div>
-    <button className="text-primary border border-black/20 dark:border-white/20 py-2 px-3 rounded-md bg-transparent mt-3" onClick={() => setShowAll(x => !x)}>
+    <button className="text-slate-800 border border-slate-900/20 py-2 px-3 rounded-md bg-transparent mt-3" onClick={() => setShowAll(x => !x)}>
       {showAll ? "Show Less" : "Show All"}
     </button>
   </>);
