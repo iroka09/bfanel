@@ -31,7 +31,7 @@ export function generateMetadata(): Metadata {
           alt: "website's logo"
         }
       ],
-      type: "article"
+      type: "website"
     }
   }
 }
