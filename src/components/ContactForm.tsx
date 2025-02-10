@@ -27,7 +27,7 @@ export default function App() {
         <textarea id="message" required name="message" rows="4" className="mt-1 block w-full border dark:border-transparent outline-none py-2 px-3 focus:border-cyan-500/60 border-gray-300 rounded-md shadow-sm dark:bg-black/20" value={message} onInput={e => setMessage(e.target.value)}></textarea>
       </div>
       <div className="md:col-span-2">
-        <button type="submit" className="px-6 py-3 bg-cyan-900 text-white font-bold rounded-md ">
+        <button type="submit" className="px-6 py-3 bg-cyan-700 hover:bg-cyan-900 transition-all text-white font-bold rounded-md ">
           Send Message
         </button>
       </div>

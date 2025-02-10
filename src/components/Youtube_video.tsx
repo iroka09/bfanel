@@ -15,7 +15,7 @@ export default function App({ id, title }: { id: string, title: string }) {
     if (!videoObject) return
     if (inView) videoObject.playVideo()
     else videoObject.pauseVideo()
-  }, [inView, videoObject])
+  }, [inView])
   return (
     <div
       ref={ref}
