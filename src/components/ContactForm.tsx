@@ -11,10 +11,10 @@ export default function App() {
     window.location.href = `mailto: info@bfanelindustries.com?subject=Customer [${name}]&email=${email}&body=${message}`
   }
   return (
-    <form className="grid grid-cols-1 md:grid-cols-2 gap-8" onSubmit={handleSubmit}>
+    <form className="grid grid-cols-1 md:grid-cols-2 gap-5" onSubmit={handleSubmit}>
       <div>
         <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-500">Your Name</label>
-        <input type="text" id="name" required name="name" className="peer mt-1 block w-full border dark:border-transparent outline-none py-2 px-3 focus:invalid:border-red-500 focus:border-cyan-500/60 border-gray-300 rounded-md shadow-sm dark:bg-black/20 dark:shadow-none" value={name} onInput={e => setName(e.target.value)} pattern="^[A-z]{2,20}(\s?[A-z]{2,20}){0,3}$" />
+        <input type="text" id="name" required name="name" className="peer mt-1 block w-full border dark:border-transparent outline-none py-2 px-3 focus:invalid:border-red-500 focus:border-cyan-500/60 border-gray-300 rounded-md shadow-sm dark:bg-black/20 dark:shadow-none" value={name} onInput={e => setName(e.target.value)} pattern="^[A-z]{2,20}(\s[A-z]{2,20}){0,3}$" />
         <span className="hidden peer-focus:peer-invalid:block text-red-500 text-xs">Invalid Name! [sample: John Doe]</span>
       </div>
       <div>

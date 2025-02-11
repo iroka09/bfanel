@@ -16,7 +16,7 @@ const faqs = [
   { question: "Do you provide delivery services?", answer: "Yes, we offer delivery services across Nigeria." },
   { question: "How can I place a bulk order?", answer: "You can contact us via email or phone to discuss bulk order requirements." },
   { question: "Do you provide installation support?", answer: "We offer consultancy services for installation to ensure proper usage." },
-  { question: "What sizes of pipes do you manufacture?", answer: "We produce pipes ranging from 20mm to 60mm in diameter." },
+  { question: "What sizes of pipes do you manufacture?", answer: "We produce pipes ranging from 20mm to 160mm in diameter." },
   { question: "Are your pipes resistant to chemicals?", answer: "Yes, our pipes are chemically resistant and suitable for industrial use." },
   { question: "Do you offer wholesale pricing for distributors?", answer: "Absolutely! We provide competitive wholesale pricing for bulk purchases." },
   { question: "What is the maximum temperature your pipes can withstand?", answer: "Our pipes can handle temperatures up to 60°C." },
@@ -37,7 +37,7 @@ export default function FAQs() {
     setExpanded((prev) => (prev === index ? false : index));
   };
   return (<>
-    <div className="max-w-4xl mx-auto py-5 mb-14">
+    <div className="max-w-4xl mx-auto py-5 mb-7">
       {faqs.slice(0, showAll ? undefined : 4).map((faq, index) => (
         <Card
           key={index}

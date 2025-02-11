@@ -23,7 +23,7 @@ export default function Home() {
       {/*" Hero Section "*/}
       <section className="flex flex-col space-y-5 md:flex-row bg-primary pt-2 pb-10 md:px-5 md:gap-2">
         <div className="container md:px-5 text-white text-center md:pt-5">
-          <Image src="/bfanel_logo.png" alt="bfanel logo" className="block mx-auto mb-2" width="300" height="100" />
+          <Image src="/bfanel_logo.png" alt="bfanel logo" className="block mx-auto mb-2" width="150" height="50" />
           <h2 className="text-4xl font-bold">Your <span className="text-cyan-400">Trusted</span> Partner in Electrical & Plumbing Piping Systems</h2>
           <p className="mt-4 text-lg">Located at Amaebu in Orsu LGA, Imo State</p>
         </div>
@@ -53,7 +53,7 @@ export default function Home() {
           </section>
 
           {/*" Products "*/}
-          <section id="products" className="bg-cyan-400  text-slate-900/90 py-16">
+          <section id="products" className="bg-cyan-500  text-slate-900/90 py-16">
             <div className="container">
               <h2 className="text-3xl font-bold text-slate-900 mb-6"><InventoryIcon className="text-4xl" /> Our Products</h2>
               <div className="flex flex-wrap gap-3 md:*:max-w-[45%]">
@@ -114,17 +114,18 @@ export default function Home() {
         </div>
         <div>
           {/*" Careers "*/}
-          <section className="bg-red-200/50 text-slate-800 py-16">
-            <div className="container">
-              <h2 className="text-3xl font-bold text-slate-900 mb-6">Join Our Team</h2>
-              <p className="text-lg">
-                We're always looking for talented individuals to join our growing team. Send your CV to <Link href="mailto:careers@bfanelindustries.com" className="text-blue-950 underline underline-offset-2">careers@bfanelindustries.com</Link>
+          <section className="relative career-background py-16">
+            <div className="absolute inset-0 bg-gradient-to-b from-black/90 from-40% via-black/85 via-70% to-black/70"></div>
+            <div className="container relative z-1">
+              <h2 className="text-3xl font-bold text-white mb-6">Join Our Team</h2>
+              <p className="text-lg text-white/80">
+                We're always looking for talented individuals to join our growing team. Send your CV to <Link href="mailto:careers@bfanelindustries.com" className="text-cyan-200 underline underline-offset-2">careers@bfanelindustries.com</Link>
               </p>
             </div>
           </section>
 
           {/*" Faqs "*/}
-          <section id="faqs" className="py-16 bg-cyan-400 text-slate-800">
+          <section id="faqs" className="py-16 bg-cyan-500 text-slate-800">
             <div className="container">
               <h2 className="text-3xl font-bold text-slate-900 mb-6"><LiveHelpIcon className="text-4xl" /> Frequently Asked Questions</h2>
               <Faqs />
@@ -148,7 +149,7 @@ export default function Home() {
               <div className="flex gap-2 text-center justify-center items-cente mb-5">
                 <span>Developed By</span> <Link href="https://iroka09.github.io" className="underline underline-offset-2 text-cyan-400 font-bold text-xl">TOCHI</Link>
               </div>
-              <p className="text-xs text-center text-white/60">&copy; {new Date().getFullYear()} B-Fanel Industries. All Rights Reserved.</p>
+              <p className="text-xs text-center text-white/60">&copy; 2022-{new Date().getFullYear()} B-Fanel Industries. All Rights Reserved.</p>
             </div>
           </footer>
 

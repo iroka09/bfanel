@@ -2,6 +2,7 @@ import type { NextConfig } from "next";
 
 
 const staticExport = false
+const isStrict = false
 
 const nextConfig: NextConfig = {
   ...staticExport && {
@@ -11,10 +12,10 @@ const nextConfig: NextConfig = {
     unoptimized: staticExport, // Needed if using Next.js Image component 
   },
   eslint: {
-    ignoreDuringBuilds: true
+    ignoreDuringBuilds: !isStrict
   },
   typescript: {
-    ignoreBuildErrors: true,
+    ignoreBuildErrors: !isStrict,
   },
   experimental: {
     //  serverActions: true
