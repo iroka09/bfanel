@@ -7,12 +7,13 @@ import Refresh from "@mui/icons-material/Refresh"
 
 
 export default function App({ id, title }: { id: string, title: string }) {
+  const [played, setPlayed] = useState(false)
   const [readyState, setReadyState] = useState<"loading" | "success" | "error">("loading")
   const [videoObject, setVideoObject] = useState<null | object>(null)
   const { inView, ref } = useInView({ threshold: 0.5, triggerOnce: false })
   const handleRefresh = () => location.reload()
   useEffect(() => {
-    if (!videoObject) return
+    if (!videoObject || !played) return
     if (inView) videoObject.playVideo()
     else videoObject.pauseVideo()
   }, [inView])
@@ -26,6 +27,7 @@ export default function App({ id, title }: { id: string, title: string }) {
         title={title}
         className={`${readyState === "success" ? "block" : "hidden"} w-full min-h-full`}
         iframeClassName="block w-full h-full"
+        onPlay={() => setPlayed(true)}
         onReady={event => {
           setVideoObject(event.target)
           setReadyState("success")
