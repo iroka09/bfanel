@@ -49,7 +49,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${assistant.className}`}>
       <body className="font-sans p-0 m-0 dark:bg-slate-900/90 dark:text-white/90">
-        <div className="flex gap-3 w-fit max-w-[80%] mt-2 mx-auto rounded-md border border-red-500 text-red-700 p-3 text-sm font-bold skeleton-wave">
+        <div className="flex gap-3 w-fit max-w-[80%] my-2 mx-auto rounded-md border border-red-500 text-red-700 p-3 text-sm font-bold skeleton-wave">
           <InfoIcon />
           <span>This is not the official BFanel website.</span>
         </div>
