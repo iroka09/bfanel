@@ -2,8 +2,13 @@ import { ReactNode } from "react";
 import { Assistant } from "next/font/google"
 import type { Metadata } from "next";
 import Script from "next/script"
+import InfoIcon from "@mui/icons-material/Info";
 import Events from "@/components/Events"
 import "./globals.css";
+
+
+
+const isProd = process.env.NODE_ENV === "production"
 
 
 const assistant = Assistant({
@@ -43,10 +48,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${assistant.className}`}>
-      <body className="font-sans p-0 m-0 dark:bg-slate-900/90 dark:text-white/90"   >
+      <body className="font-sans p-0 m-0 dark:bg-slate-900/90 dark:text-white/90">
+        <div className="flex gap-3 w-fit max-w-[80%] mt-2 mx-auto rounded-md border border-red-500 text-red-700 p-3 text-sm font-bold skeleton-wave">
+          <InfoIcon />
+          <span>This is not the official BFanel website.</span>
+        </div>
         {children}
         <Events />
-        {process.env.NODE_ENV === "development" && (
+        {isProd || (
           <Script
             src="/eruda.js"
             strategy="beforeInteractive"

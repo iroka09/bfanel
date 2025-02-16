@@ -2,23 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background:#ffffff;
-  --foreground:#171717;
-}
-
-@media (prefers-color-scheme:dark) {
-  :root {
-    --background:#0a0a0a;
-    --foreground:#ededed;
-  }
-}
-
-body {
-  /*color:var(--foreground);*/
-  /*background:var(--background);*/
-  font-family:Arial, Helvetica, sans-serif;
-}
 
 .container {
   @apply px-5 mx-auto
@@ -39,4 +22,19 @@ body {
 .career-background {
   background-image:url(/bfanel.jpg);
   background-position:0px -60px;
+}
+
+.skeleton-wave{
+  background: linear-gradient(90deg, transparent, rgba(255,0,0,0.1), rgba(255,0,0,0.3) 85%, transparent);
+  animation: wave-skeleton 2s infinite linear;
+  background-size: 200% 100%;
+}
+
+@keyframes wave-skeleton{
+  0%{
+    background-position: 100% 0;
+  }
+  100%{
+    background-position: -100% 0;
+  }
 }

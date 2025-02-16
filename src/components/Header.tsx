@@ -9,7 +9,7 @@ import Close from "@mui/icons-material/Close"
 export default function App(): ReactNode {
   const [inCollapse, setInCollapse] = useState(false)
   return (<>
-    <header className="container bg-primary py-4 text-white/80 flex justify-between items-center gap-2 min-w-full">
+    <header className="container bg-primary py-2 text-white/80 flex justify-between items-center gap-2 min-w-full">
       <Link href="/"><h1 className="text-3xl font-bold">B-Fanel</h1></Link>
       <div className="hidden md:block">
         <Nav />
@@ -20,7 +20,7 @@ export default function App(): ReactNode {
         </button>
       </div>
     </header>
-    <Collapse in={inCollapse} unmountOnExit className="bg-cyan-400">
+    <Collapse in={inCollapse} unmountOnExit className="bg-cyan-500">
       <div className="md:hidden mobile p-5">
         <Nav />
       </div>
