@@ -26,15 +26,16 @@
 
 .skeleton-wave{
   background: linear-gradient(90deg, transparent, rgba(255,0,0,0.1), rgba(255,0,0,0.3) 85%, transparent);
-  animation: wave-skeleton 2s infinite linear;
+  animation: wave-skeleton 3s infinite linear;
+  background-repeat: no-repeat;
   background-size: 200% 100%;
 }
 
 @keyframes wave-skeleton{
   0%{
-    background-position: 100% 0;
+    background-position: 200% 0%;
   }
-  100%{
+  30%, 100%{
     background-position: -100% 0;
   }
 }
