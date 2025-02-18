@@ -37,11 +37,10 @@ export default function FAQs() {
     setExpanded((prev) => (prev === index ? false : index));
   };
   return (<>
-    <div className="max-w-4xl mx-auto py-5 mb-7">
+    <div className="max-w-4xl mx-auto py-5 mb-7 space-y-3">
       {faqs.slice(0, showAll ? undefined : 4).map((faq, index) => (
         <Card
           key={index}
-          className="mb-2"
         >
           <div
             onClick={() => handleExpand(index)}

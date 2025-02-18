@@ -71,18 +71,31 @@ function ThemeButton() {
     }
   }, [])
   useEffect(() => {
-    if (theme) {
-      if (theme === "light") {
-        document.documentElement.classList.remove("dark")
-      } else if (theme === "dark") {
-        document.documentElement.classList.add("dark")
-      } else {
-        if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-          document.documentElement.classList.add("dark")
-        } else {
+    try {
+      if (theme) {
+        if (theme === "light") {
           document.documentElement.classList.remove("dark")
         }
+        else if (theme === "dark") {
+          document.documentElement.classList.add("dark")
+        }
+        else {
+          const darkModeMediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+          function mediaQueryFn() {
+            if (darkModeMediaQuery.matches) {
+              document.documentElement.classList.add("dark")
+            }
+            else {
+              document.documentElement.classList.remove("dark")
+            }
+          }
+          mediaQueryFn()
+          darkModeMediaQuery.addEventListener("change", mediaQueryFn);
+          return () => darkModeMediaQuery.removeEventListener("change", mediaQueryFn);
+        }
       }
+    }
+    finally {
       window.localStorage.setItem("theme", theme)
     }
   }, [theme])
@@ -93,7 +106,7 @@ function ThemeButton() {
       </button>
       {show &&
         <ClickAwayListener onClickAway={() => setShow(false)}>
-          <ul className="absolute top-0 md:top-[initial] md:bottom-0 right-0 z-1 bg-slate-100 dark:bg-slate-600 *:relative *:pl-3 *:pr-10 *:py-2 text-primary *:whitespace-nowrap *:flex *:gap-3 hover:*:bg-slate-500/30">
+          <ul className="absolute top-0 md:top-[initial] md:bottom-0 right-0 z-1 rounded-md bg-slate-100 dark:bg-slate-600 *:relative *:pl-4 *:pr-14 *:py-3 text-primary *:whitespace-nowrap *:flex *:gap-3 hover:*:bg-slate-200/80 dark:hover:*:bg-slate-500/50">
             <li onClick={() => setTheme("light")}>
               <LightModeIcon /> <span>Light mode</span> {theme === "light" && <CheckIcon className="text-green-400 ml-auto absolute top-[50%] right-3 translate-y-[-50%]" />}
             </li>
