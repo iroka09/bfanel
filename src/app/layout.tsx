@@ -4,6 +4,8 @@ import type { Metadata } from "next";
 import Script from "next/script"
 import InfoIcon from "@mui/icons-material/Info";
 import Events from "@/components/Events"
+import Header from "@/components/Header"
+import Footer from "@/components/Footer"
 import "./globals.css";
 
 
@@ -53,7 +55,9 @@ export default function RootLayout({
           <InfoIcon className="rotate-180" />
           <span>This is not the official BFanel website.</span>
         </div>
+        <Header />
         {children}
+        <Footer />
         <Events />
         {isProd || (
           <Script

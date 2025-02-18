@@ -1,6 +1,5 @@
 
 import YouTube from "@/components/Youtube_video"
-import Header from "@/components/Header"
 import Image from "next/image"
 import Link from "next/link"
 import Card from "@/components/Card"
@@ -17,8 +16,6 @@ import ContactsIcon from "@mui/icons-material/Contacts"; // Contact
 export default function Home() {
   return (
     <main className="">
-      {/*" Header "*/}
-      <Header />
 
       {/*" Hero Section "*/}
       <section className="flex flex-col space-y-5 md:flex-row bg-primary pt-2 pb-10 md:px-5 md:gap-2">
@@ -137,21 +134,11 @@ export default function Home() {
             <div className="container">
               <h2 className="text-3xl font-bold text-primary mb-6"><ContactsIcon className="text-4xl" /> Contact Us</h2>
               <p className="mb-4">Address: Amaebu, Orsu LGA, Imo State</p>
-              <p className="mb-4">Phone: <a href="tel:+234-703-845-0694" className="underline underline-offset-2">+234-703-845-0694</a></p>
+              <p className="mb-4">Phone: <Link href="tel:+234-703-845-0694" className="underline underline-offset-2">+234-703-845-0694</Link></p>
               <p className="mb-4">Email: info@bfanelindustries.com</p>
               <ContactForm />
             </div>
           </section>
-
-          {/*" Footer "*/}
-          <footer className="bg-primary text-white pb-6 pt-20 rounded-t-3xl">
-            <div className="container text-center">
-              <div className="flex gap-2 text-center justify-center items-cente mb-5">
-                <span>Developed By</span> <Link href="https://iroka09.github.io" className="underline underline-offset-2 text-cyan-400 font-bold text-xl">TOCHI</Link>
-              </div>
-              <p className="text-xs text-center text-white/60">&copy; 2022-{new Date().getFullYear()} B-Fanel Industries. All Rights Reserved.</p>
-            </div>
-          </footer>
 
         </div>
       </div>
