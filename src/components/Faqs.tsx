@@ -37,7 +37,7 @@ export default function FAQs() {
     setExpanded((prev) => (prev === index ? false : index));
   };
   return (<>
-    <div className="max-w-4xl mx-auto py-5 mb-7 space-y-3">
+    <div className="max-w-4xl mx-auto py-5 space-y-3">
       {faqs.slice(0, showAll ? undefined : 4).map((faq, index) => (
         <Card
           key={index}
@@ -53,12 +53,12 @@ export default function FAQs() {
             </span>
           </div>
           <Collapse in={expanded === index} unmountOnExit>
-            <span className="block mt-4 text-slate-900/80">{faq.answer}</span>
+            <p className="block mt-4 text-slate-900/80">{faq.answer}</p>
           </Collapse>
         </Card>
       ))}
     </div>
-    <button className="text-slate-800 border border-slate-900/20 py-2 px-3 rounded-md bg-transparent" onClick={() => setShowAll(x => !x)}>
+    <button className="mt-7 text-slate-800 border border-slate-900/20 py-2 px-3 rounded-md bg-transparent" onClick={() => setShowAll(x => !x)}>
       {showAll ? "Show Less" : "Show All"}
     </button>
   </>);

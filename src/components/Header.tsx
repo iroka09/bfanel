@@ -57,8 +57,10 @@ function Nav(): ReactNode {
   )
 }
 
+type ThemeValues = "light" | "dark" | "system"
+
 function ThemeButton() {
-  const [theme, setTheme] = useState("system")
+  const [theme, setTheme] = useState<ThemeValues>("system")
   const [show, setShow] = useState(false)
   useEffect(() => {
     const savedTheme = window.localStorage.getItem("theme")
@@ -72,14 +74,14 @@ function ThemeButton() {
   }, [])
   useEffect(() => {
     try {
-      if (theme) {
-        if (theme === "light") {
-          document.documentElement.classList.remove("dark")
-        }
-        else if (theme === "dark") {
+      switch (theme) {
+        case "light":
+          document.documentElement.classList.remove("dark");
+          break;
+        case "dark":
           document.documentElement.classList.add("dark")
-        }
-        else {
+          break;
+        case "system":
           const darkModeMediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
           function mediaQueryFn() {
             if (darkModeMediaQuery.matches) {
@@ -92,7 +94,7 @@ function ThemeButton() {
           mediaQueryFn()
           darkModeMediaQuery.addEventListener("change", mediaQueryFn);
           return () => darkModeMediaQuery.removeEventListener("change", mediaQueryFn);
-        }
+        default:
       }
     }
     finally {
