@@ -25,7 +25,7 @@
 }
 
 .skeleton-wave{
-  background: linear-gradient(90deg, transparent, rgba(255,0,0,0.1), rgba(255,0,0,0.3) 85%, transparent);
+  background: linear-gradient(135deg, transparent, rgba(255,0,0,0.1), rgba(255,0,0,0.2) 85%, transparent);
   animation: wave-skeleton 3s infinite linear;
   background-repeat: no-repeat;
   background-size: 200% 100%;

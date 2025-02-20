@@ -1,14 +1,19 @@
 import Link from "next/link"
 
 
+
+
+
 export default function App() {
   return (
-    <footer className="bg-primary text-white pb-6 pt-20 rounded-t-3xl">
+    <footer className="bg-primary text-white py-5 rounded-t-3xl">
       <div className="container text-center">
-        <div className="flex gap-2 text-center justify-center items-cente mb-5">
-          <span>Developed By</span> <Link href="https://iroka09.github.io" className="underline underline-offset-2 text-cyan-400 font-bold text-xl">TOCHI</Link>
+        <div className="my-5 text-sm">
+          <span>Do you need a website like this?</span>
+          <br />
+          <Link href="https://iroka09.github.io" className="underline underline-offset-2 text-cyan-400">Click Here</Link>
         </div>
-        <p className="text-xs text-center text-white/60">&copy; 2022-{new Date().getFullYear()} B-Fanel Industries. All Rights Reserved.</p>
+        <p className="text-xs text-center text-white/60 mt-8">&copy; 2022-{new Date().getFullYear()} B-Fanel Industries. All Rights Reserved.</p>
       </div>
     </footer>
   )

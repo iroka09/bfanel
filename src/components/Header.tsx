@@ -108,7 +108,7 @@ function ThemeButton() {
       </button>
       {show &&
         <ClickAwayListener onClickAway={() => setShow(false)}>
-          <ul className="absolute top-0 md:top-[initial] md:bottom-0 right-0 z-1 rounded-md bg-slate-100 dark:bg-slate-600 *:relative *:pl-4 *:pr-14 *:py-3 text-primary *:whitespace-nowrap *:flex *:gap-3 hover:*:bg-slate-200/80 dark:hover:*:bg-slate-500/50">
+          <ul className="absolute top-0 md:top-[initial] md:bottom-0 right-0 z-1 rounded-md overflow-hidden bg-slate-100 dark:bg-slate-600 *:relative *:pl-4 *:pr-14 *:py-3 text-primary *:whitespace-nowrap *:flex *:gap-3 hover:*:bg-slate-200/80 dark:hover:*:bg-slate-500/50">
             <li onClick={() => setTheme("light")}>
               <LightModeIcon /> <span>Light mode</span> {theme === "light" && <CheckIcon className="text-green-400 ml-auto absolute top-[50%] right-3 translate-y-[-50%]" />}
             </li>
