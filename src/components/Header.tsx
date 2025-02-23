@@ -20,7 +20,7 @@ export default function App(): ReactNode {
       <Link href="/">
         <h1 className="text-3xl font-bold">B-Fanel</h1>
       </Link>
-      <div className="hidden md:block">
+      <div className="hidden md:block ml-auto">
         <Nav />
       </div>
       <div className="flex gap-3">
