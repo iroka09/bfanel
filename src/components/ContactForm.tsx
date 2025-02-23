@@ -20,7 +20,7 @@ export default function App() {
     }))
   }
   const handleSubmit = () => {
-    window.location.href = `mailto: info@bfanelindustries.com?subject=Customer [${name}]&email=${email}&body=${message}`
+    window.location.href = `mailto: info@bfanelindustries.com?subject=Customer [${name.trim()}]&email=${email}&body=${message}`
   }
   return (
     <form className="grid grid-cols-1 md:grid-cols-2 gap-5" onSubmit={handleSubmit}>
@@ -35,7 +35,7 @@ export default function App() {
           value={name}
           onInput={e => handleInput("name", setName, e.target.value)}
           onBlur={() => setTouched(x => ({ ...x, name: true }))}
-          pattern="^[A-z]{2,20}(\s[A-z]{2,20}){0,3}$"
+          pattern="^[A-z]{2,20}(\s[A-z]{2,20}){0,3}\s*$"
         />
         <span className={`hidden ${touched.name ? "peer-invalid:block" : ""} text-red-500 text-xs`}>Invalid Name! [sample: John Doe]</span>
       </div>

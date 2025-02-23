@@ -22,7 +22,7 @@ export default function Home() {
         <div className="container md:px-5 text-white text-center md:pt-5">
           <Image src="/bfanel_logo.png" alt="bfanel logo" className="block mx-auto mb-2" width="150" height="50" />
           <h2 className="text-4xl font-bold">Your <span className="text-cyan-400">Trusted</span> Partner in Electrical & Plumbing Piping Systems</h2>
-          <p className="mt-4 text-lg">Located at Amaebu in Orsu LGA, Imo State</p>
+          <p className="mt-4 text-lg">Located at Amaebu in Orsu L.G.A, Imo State</p>
         </div>
         <div className="relative aspect-square w-full" >
           <Image src="/bfanel.jpg" alt="Bfanel pipes sample" className="absolute inset-0 object-contain" fill />
