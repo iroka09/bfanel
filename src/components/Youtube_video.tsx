@@ -17,6 +17,10 @@ export default function App({ id, title }: { id: string, title: string }) {
     if (inView) videoObject.playVideo()
     else videoObject.pauseVideo()
   }, [inView])
+  useEffect(() => {
+    const x = window.screen
+    setTimeout(() => console.log(x), 1000)
+  }, [])
   return (
     <div
       ref={ref}

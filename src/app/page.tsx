@@ -10,13 +10,14 @@ import InventoryIcon from "@mui/icons-material/Inventory"; // Products
 import BuildIcon from "@mui/icons-material/Build"; // Services
 import LiveHelpIcon from "@mui/icons-material/LiveHelp"; // FAQs
 import ContactsIcon from "@mui/icons-material/Contacts"; // Contact
+import bfanelPic from "@/../public/bfanel.jpg"
 
 
 
 export default function Home() {
   return (
     <main className="">
-
+    
       {/*" Hero Section "*/}
       <section className="flex flex-col space-y-5 md:flex-row bg-primary pt-2 pb-10 md:px-5 md:gap-2">
         <div className="container md:px-5 text-white text-center md:pt-5">
@@ -24,8 +25,8 @@ export default function Home() {
           <h2 className="text-4xl font-bold">Your <span className="text-cyan-400">Trusted</span> Partner in Electrical & Plumbing Piping Systems</h2>
           <p className="mt-4 text-lg">Located at Amaebu in Orsu L.G.A, Imo State</p>
         </div>
-        <div className="relative aspect-square w-full" >
-          <Image src="/bfanel.jpg" alt="Bfanel pipes sample" className="absolute inset-0 object-contain" fill />
+        <div className="md:max-h-[300px] overflow-hidden">
+          <Image src={bfanelPic} alt="Bfanel pipes sample" className="max-h-full object-fit" />
         </div>
       </section>
 

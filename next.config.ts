@@ -14,10 +14,6 @@ const nextConfig: NextConfig = {
   },
   typescript: {
     ignoreBuildErrors: !isStrict,
-  },
-  experimental: {
-    //  serverActions: true
   }
 };
-
 export default nextConfig

@@ -12,7 +12,6 @@ import CheckIcon from "@mui/icons-material/Check"
 import DarkModeIcon from "@mui/icons-material/DarkMode"
 import ClickAwayListener from "@mui/material/ClickAwayListener"
 
-
 export default function App(): ReactNode {
   const [inCollapse, setInCollapse] = useState(false)
   return (<>
@@ -59,20 +58,33 @@ function Nav(): ReactNode {
 
 
 
-type ThemeValues = "light" | "dark" | "system"
+type ThemeValuesType = "light" | "dark" | "system"
+const themeButtons: { key: ThemeValuesType, title: string, icon: ReactNode }[] = [
+  {
+    key: "light",
+    title: "Light Mode",
+    icon: LightModeIcon
+  },
+  {
+    key: "dark",
+    title: "Dark Mode",
+    icon: DarkModeIcon
+  },
+  {
+    key: "system",
+    title: "System Theme",
+    icon: AppSettingsAltIcon
+  },
+]
 
 function ThemeButton() {
-  const [theme, setTheme] = useState<ThemeValues>("system")
+  const [theme, setTheme] = useState<ThemeValuesType>("system")
   const [show, setShow] = useState(false)
   useEffect(() => {
     const savedTheme = window.localStorage.getItem("theme")
-    if (savedTheme === "light") {
-      setTheme("light")
-    } else if (savedTheme === "dark") {
-      setTheme("dark")
-    } else {
-      setTheme("system")
-    }
+    if (savedTheme === "light") setTheme("light")
+    else if (savedTheme === "dark") setTheme("dark")
+    else setTheme("system")
   }, [])
   useEffect(() => {
     try {
@@ -111,15 +123,16 @@ function ThemeButton() {
       {show &&
         <ClickAwayListener onClickAway={() => setShow(false)}>
           <ul className="absolute top-0 right-0 md:top-[initial] md:right-[initial] md:bottom-0 md:left-0 z-1 rounded-md overflow-hidden bg-slate-100 dark:bg-slate-600 *:relative *:pl-4 *:pr-14 *:py-3 text-primary *:whitespace-nowrap *:flex *:gap-3 hover:*:bg-slate-200/80 dark:hover:*:bg-slate-500/50">
-            <li onClick={() => setTheme("light")}>
-              <LightModeIcon /> <span>Light mode</span> {theme === "light" && <CheckIcon className="text-green-400 ml-auto absolute top-[50%] right-3 translate-y-[-50%]" />}
-            </li>
-            <li onClick={() => setTheme("dark")}>
-              <DarkModeIcon /> <span>Dark mode</span> {theme === "dark" && <CheckIcon className="text-green-400 ml-auto absolute top-[50%] right-3 translate-y-[-50%]" />}
-            </li>
-            <li onClick={() => setTheme("system")}>
-              <AppSettingsAltIcon /> <span>System theme</span> {theme === "system" && <CheckIcon className="text-green-400 ml-auto absolute top-[50%] right-3 translate-y-[-50%]" />}
-            </li>
+            {themeButtons.map((obj, i) => (
+              <li
+                key={i}
+                onClick={() => {
+                  setTheme(obj.key)
+                }}
+              >
+                {<obj.icon />} <span>{obj.title}</span> {theme === obj.key && <CheckIcon className="text-green-400 ml-auto absolute top-[50%] right-3 translate-y-[-50%]" />}
+              </li>
+            ))}
           </ul>
         </ClickAwayListener>
       }

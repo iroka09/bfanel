@@ -1,22 +1,23 @@
 import { ReactNode } from "react";
 import { Assistant } from "next/font/google"
 import type { Metadata } from "next";
+import Link from "next/link";
 import Script from "next/script"
 import InfoIcon from "@mui/icons-material/Info";
 import Events from "@/components/Events"
 import Header from "@/components/Header"
 import Footer from "@/components/Footer"
+import GoogleLogin from "@/components/GoogleLogin"
 import "./globals.css";
 
 
 
-const isProd = process.env.NODE_ENV === "production"
+const isDev = process.env.NODE_ENV === "development"
 
 
 const assistant = Assistant({
   subsets: ["latin"],
-  display: "swap",
-  weight: ["200", "700"]
+  display: "swap"
 });
 
 
@@ -59,7 +60,8 @@ export default function RootLayout({
         {children}
         <Footer />
         <Events />
-        {isProd || (
+        <GoogleLogin />
+        {isDev && (
           <Script
             src="/eruda.js"
             strategy="beforeInteractive"
