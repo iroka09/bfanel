@@ -4,7 +4,7 @@ import { useState, useEffect } from "react"
 import googleOneTap from 'google-one-tap';
 
 const options = {
-  client_id: '910193991072-v8ulag8596cnolc1523pmgitfelmp75j.apps.googleusercontent.com', // required
+  client_id: '910193991072-542kbb03f4b1o8th2k2bui06u8eh9jng.apps.googleusercontent.com', // required
   auto_select: false, // optional
   cancel_on_tap_outside: false, // optional
   context: 'signin', // optional
