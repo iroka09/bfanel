@@ -60,7 +60,7 @@ export default function RootLayout({
         {children}
         <Footer />
         <Events />
-        <GoogleLogin />
+        {globalThis.window && <GoogleLogin />}
         {isDev && (
           <Script
             src="/eruda.js"
