@@ -2,6 +2,7 @@
 
 import { useState, useEffect, type ReactNode } from "react"
 import Link from "next/link"
+import Image from "next/image"
 import Collapse from "@mui/material/Collapse"
 import Menu from "@mui/icons-material/Menu"
 import Close from "@mui/icons-material/Close"
@@ -12,20 +13,24 @@ import CheckIcon from "@mui/icons-material/Check"
 import DarkModeIcon from "@mui/icons-material/DarkMode"
 import ClickAwayListener from "@mui/material/ClickAwayListener"
 
+
+
+
 export default function App(): ReactNode {
   const [inCollapse, setInCollapse] = useState(false)
   return (<>
-    <header className="container bg-primary py-2 text-white/80 flex justify-between items-center gap-2 min-w-full">
-      <Link href="/">
-        <h1 className="text-3xl font-bold">B-Fanel</h1>
+    <header className="pr-2 py-1 flex justify-between items-center gap-2 min-w-full border-y border-slate-900/20">
+      <Link href="/" className="flex items-center">
+        <Image src="/logo_low.png" width={60} height={20} alt="logo" />
+        <h1 className="font-bold">B-Fanel Industries</h1>
       </Link>
       <div className="hidden md:block ml-auto">
         <Nav />
       </div>
-      <div className="flex gap-3">
+      <div className="flex gap-4">
         <ThemeButton />
         <button className="md:hidden *:text-4xl" onClick={() => setInCollapse(x => !x)}>
-          {inCollapse ? <Close /> : <Menu />}
+          {inCollapse ? <Close className="!text-3xl" /> : <Menu className="icon !text-3xl" />}
         </button>
       </div>
     </header>
@@ -118,7 +123,7 @@ function ThemeButton() {
   return (<>
     <div className="relative md:fixed md:bottom-10 md:left-3 md:z-10 md:bg-black/50 md:rounded-md md:p-2 md:shadow-lg">
       <button onClick={() => setShow(true)}>
-        <PaletteIcon className="icon text-4xl" />
+        <PaletteIcon className="icon text-2xl" />
       </button>
       {show &&
         <ClickAwayListener onClickAway={() => setShow(false)}>

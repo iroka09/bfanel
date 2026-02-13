@@ -4,44 +4,50 @@ import Image from "next/image"
 import Link from "next/link"
 import Card from "@/components/Card"
 import Faqs from "@/components/Faqs"
+import About from "@/components/About"
+import HeroButtons from "@/components/HeroButtons"
 import ContactForm from "@/components/ContactForm"
 import InfoIcon from "@mui/icons-material/Info"; // About Us
 import InventoryIcon from "@mui/icons-material/Inventory"; // Products
 import BuildIcon from "@mui/icons-material/Build"; // Services
 import LiveHelpIcon from "@mui/icons-material/LiveHelp"; // FAQs
 import ContactsIcon from "@mui/icons-material/Contacts"; // Contact
-import bfanelPic from "@/../public/bfanel.jpg"
+import { roboto } from "@/utils/fonts"
+
+
 
 
 
 export default function Home() {
   return (
     <main className="">
-    
+
       {/*" Hero Section "*/}
-      <section className="flex flex-col space-y-5 md:flex-row bg-primary pt-2 pb-10 md:px-5 md:gap-2">
-        <div className="container md:px-5 text-white text-center md:pt-5">
-          <Image src="/bfanel_logo.png" alt="bfanel logo" className="block mx-auto mb-2" width="150" height="50" />
-          <h2 className="text-4xl font-bold">Your <span className="text-cyan-400">Trusted</span> Partner in Electrical & Plumbing Piping Systems</h2>
-          <p className="mt-4 text-lg">Located at Amaebu in Orsu L.G.A, Imo State</p>
+      <section className="flex flex-col space-y-5 md:flex-row pt-2 pb-10 md:px-5 md:gap-2">
+        <div className="container text-primary md:pt-5 space-y-5 py-5 text-center">
+          {<Image src="/logo_high.png" alt="bfanel logo" className="block mx-auto mb-2" width="200" height="100" />}
+          <p className={"text-3xl uppercase font-black " + roboto.className}>
+            Bfanel Industries Limited
+          </p>
+          <p className="inline-block mt-4 text-md">
+            Your <span className="text-cyan-400">Trusted</span> Partner in Electrical & Plumbing Piping Systems. <br/>
+            Specializes in the production of top-quality plumbing and electrical conduit pipes. Our mission is to deliver durable, innovative, and environmentally friendly piping solutions while ensuring customer satisfaction. Our vision is to be a global leader in the piping industry through excellence and innovation.
+          </p>
+          <div className="pt-3">
+            <HeroButtons />
+          </div>
         </div>
-        <div className="md:max-h-[300px] overflow-hidden">
+        {/*<div className="md:max-h-[300px] overflow-hidden">
           <Image src={bfanelPic} alt="Bfanel pipes sample" className="max-h-full object-fit" />
-        </div>
+        </div>*/}
       </section>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-2">
         <div>
           {/*" About Us "*/}
-          <section id="about" className="py-16">
-            <div className="container">
-              <h2 className="text-3xl font-bold text-primary mb-6"><InfoIcon className="text-4xl" /> About Us</h2>
-              <p className="text-lg leading-relaxed">
-                B-Fanel Industries specializes in the production of top-quality plumbing and electrical conduit pipes. Our mission is to deliver durable, innovative, and environmentally friendly piping solutions while ensuring customer satisfaction. Our vision is to be a global leader in the piping industry through excellence and innovation.
-              </p>
-            </div>
+          <section id="about" className="container  bg-slate-100">
+            <About />
           </section>
-
           {/*" Video "*/}
           <section id="video" className="mb-8">
             <YouTube
@@ -117,7 +123,7 @@ export default function Home() {
             <div className="container relative z-1">
               <h2 className="text-3xl font-bold text-white mb-6">Join Our Team</h2>
               <p className="text-lg text-white/80">
-                We're always looking for talented individuals to join our growing team. Send your CV to <Link href="mailto:careers@bfanelindustries.com" className="text-cyan-200 underline underline-offset-2">careers@bfanelindustries.com</Link>
+                We're always looking for talented individuals to join our growing team. Send your CV to <Link href="mailto:careers@bfanelindustries.com" className="text-cyan-200 underline underline-offset-2">info@bfanelindustries.com</Link>
               </p>
             </div>
           </section>
@@ -134,9 +140,11 @@ export default function Home() {
           <section id="contact" className="py-16">
             <div className="container">
               <h2 className="text-3xl font-bold text-primary mb-6"><ContactsIcon className="text-4xl" /> Contact Us</h2>
-              <p className="mb-4">Address: Amaebu, Orsu LGA, Imo State</p>
+              <p className="mb-4">Location: At NO.16 Kilometer 10 Orlu-Ihiala road, Awo-Idemili, Imo state.</p>
               <p className="mb-4">Phone: <Link href="tel:+234-703-845-0694" className="underline underline-offset-2">+234-703-845-0694</Link></p>
-              <p className="mb-4">Email: info@bfanelindustries.com</p>
+              <p className="mb-4">
+                Email: <Link href="mailto: info@bfanelindustries.com" className="underline underline-offset-2">info@bfanelindustries.com</Link>
+              </p>
               <ContactForm />
             </div>
           </section>

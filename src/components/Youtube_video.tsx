@@ -8,7 +8,7 @@ import Refresh from "@mui/icons-material/Refresh"
 
 export default function App({ id, title }: { id: string, title: string }) {
   const [played, setPlayed] = useState(false)
-  const [readyState, setReadyState] = useState<"loading" | "success" | "error">("loading")
+  const [videoState, setVideoState] = useState<"loading" | "success" | "error">("loading")
   const [videoObject, setVideoObject] = useState<null | object>(null)
   const { inView, ref } = useInView({ threshold: 0.5, triggerOnce: false })
   const handleRefresh = () => location.reload()
@@ -24,29 +24,33 @@ export default function App({ id, title }: { id: string, title: string }) {
   return (
     <div
       ref={ref}
-      className={`container grid place-items-center ${readyState === "success" ? "" : "min-h-[200px]"} bg-black mx-auto`}
+      className={`container grid place-items-center ${videoState === "success" ? "min-h-[300px]" : "min-h-[200px]"} bg-black mx-auto`}
     >
       <YouTube
         videoId={id}
         title={title}
-        className={`${readyState === "success" ? "block" : "hidden"} w-full min-h-full`}
+        className={`${videoState === "success" ? "block" : "hidden"} w-full h-full`}
         iframeClassName="block w-full h-full"
         onPlay={() => setPlayed(true)}
         onReady={event => {
           setVideoObject(event.target)
-          setReadyState("success")
+          setVideoState("success")
         }}
         onError={() => {
-          setReadyState("error")
+          setVideoState("error")
         }}
         opts={{
           playerVars: {
-            autoplay: 0
+            autoplay: 0,
+            modestbranding: 1,
+            rel: 0,
+            controls: 1,
+            showinfo: 0,
           },
         }}
       />
-      {readyState === "loading" && <span className="block h-[50px] border-2 border-white aspect-square border-t-transparent rounded-full animate-spin"></span>}
-      {readyState === "error" && (
+      {videoState === "loading" && <span className="block h-[50px] border-2 border-white aspect-square border-t-transparent rounded-full animate-spin"></span>}
+      {videoState === "error" && (
         <div className="flex flex-col items-center">
           <span className="text-red-500 text-xs mb-2">Failed to load video!</span>
           <button onClick={handleRefresh} className="text-white *:text-5xl">
