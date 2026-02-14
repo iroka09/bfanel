@@ -8,6 +8,7 @@ import About from "@/components/About"
 import Products from "@/components/Products"
 import HeroButtons from "@/components/HeroButtons"
 import ContactForm from "@/components/ContactForm"
+import Testimonials from "@/components/Testimonials"
 import { roboto } from "@/utils/fonts"
 
 
@@ -27,7 +28,7 @@ export default function Home() {
           </p>
           <p className="inline-block mt-4 text-md">
             Your <span className="text-secondary font-bold">Trusted</span> Partner in Electrical & Plumbing Piping Systems. <br />
-            Specializes in the production of top-quality plumbing and electrical conduit pipes. Our mission is to deliver durable, innovative, and environmentally friendly piping solutions while ensuring customer satisfaction. Our vision is to be a global leader in the piping industry through excellence and innovation.
+            Specializes in the production of top-quality plumbing and electrical conduit pipes. Our mission is to deliver durable, innovative, and environmentally friendly piping solutions while ensuring customer satisfaction.
           </p>
           <HeroButtons />
         </div>
@@ -84,18 +85,11 @@ export default function Home() {
       </section>*/}
 
           {/*" Testimonials "*/}
-          <section className="py-16">
+          <section className="py-16 bg-neutral-100">
             <div className="container">
               <h2 className="text-2xl font-bold text-primary mb-6 uppercase">What Our Clients Say</h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <Card>
-                  <p>"B-Fanel pipes are the most reliable on the market."</p>
-                  <span className="block mt-4 font-bold">- John Doe, Contractor</span>
-                </Card>
-                <Card>
-                  <p>"Excellent customer service and top-notch quality. Highly recommended."</p>
-                  <span className="block mt-4 font-bold">- Jane Smith, Engineer</span>
-                </Card>
+              <div className="py-0 ">
+                <Testimonials />
               </div>
             </div>
           </section>

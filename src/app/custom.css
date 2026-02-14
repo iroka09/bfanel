@@ -1,6 +1,7 @@
 :root {
   --primary: #001832;
   --secondary: hsl(193, 81%, 41%);
+  --secondary-dark: hsl(193, 81%, 25%);
 }
 
 :root.dark {

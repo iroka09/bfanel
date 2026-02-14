@@ -12,14 +12,16 @@ import LightModeIcon from "@mui/icons-material/LightMode"
 import CheckIcon from "@mui/icons-material/Check"
 import DarkModeIcon from "@mui/icons-material/DarkMode"
 import ClickAwayListener from "@mui/material/ClickAwayListener"
-
+import { useHeadroom } from "@mantine/hooks"
+import { Spin as Hamburger } from 'hamburger-react'
 
 
 
 export default function App(): ReactNode {
   const [inCollapse, setInCollapse] = useState(false)
+  const pinned = useHeadroom({ fixedAt: 120 })
   return (<>
-    <header className="pr-2 py-1 flex justify-between items-center gap-2 min-w-full border-y border-slate-900/20">
+    <header className={`sticky top-0 inset-x-0 pr-2 py-1 flex justify-between items-center gap-2 min-w-full border-y border-slate-900/20 z-50 transition-transform duration-300 bg-white/50 dark:bg-black/30 backdrop-blur-md ${pinned ? "translate-y-0" : "-translate-y-full"}`}>
       <Link href="/" className="flex items-center">
         <Image src="/logo_low.png" width={60} height={20} alt="logo" />
         <h1 className="font-bold">B-Fanel Industries</h1>
@@ -27,11 +29,12 @@ export default function App(): ReactNode {
       <div className="hidden md:block ml-auto">
         <Nav />
       </div>
-      <div className="flex gap-4">
+      <div className="flex gap-4 items-center">
         <ThemeButton />
-        <button className="md:hidden *:text-4xl" onClick={() => setInCollapse(x => !x)}>
+        {/*<button className="md:hidden *:text-4xl" onClick={() => setInCollapse(x => !x)}>
           {inCollapse ? <Close className="!text-3xl" /> : <Menu className="icon !text-3xl" />}
-        </button>
+        </button>*/}
+         <Hamburger toggled={inCollapse} toggle={setInCollapse} />
       </div>
     </header>
     <div className="md:hidden mobile">
