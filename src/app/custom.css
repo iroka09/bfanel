@@ -1,0 +1,33 @@
+:root {
+  --primary: #001832;
+  --secondary: hsl(193, 81%, 41%);
+}
+
+:root.dark {
+  --primary: white;
+  --secondary: #0F7490;
+}
+
+
+.career-background {
+  background-image: url(/images-1.jpg);
+  background-position: center;
+}
+
+.skeleton-wave {
+  background: linear-gradient(135deg, transparent, rgba(255, 0, 0, 0.1), rgba(255, 0, 0, 0.2) 85%, transparent);
+  animation: wave-skeleton 3s infinite linear;
+  background-repeat: no-repeat;
+  background-size: 200% 100%;
+}
+
+@keyframes wave-skeleton {
+  0% {
+    background-position: 200% 0%;
+  }
+  
+  30%,
+  100% {
+    background-position: -100% 0;
+  }
+}

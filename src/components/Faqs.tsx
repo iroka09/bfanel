@@ -46,8 +46,8 @@ export default function FAQs() {
             onClick={() => handleExpand(index)}
             className="flex justify-between gap-3"
           >
-            <h2 className="text-slate-800 font-bold text-lg">{faq.question}</h2>
-            <span className="*:text-slate-900 text-3xl">
+            <h2 className="text-primary font-bold text-lg">{faq.question}</h2>
+            <span className="*:text-primary text-3xl">
               {expanded === index ? <ExpandLessIcon /> : <ExpandMoreIcon />
               }
             </span>
@@ -58,7 +58,7 @@ export default function FAQs() {
         </Card>
       ))}
     </div>
-    <button className="mt-7 text-slate-800 border border-slate-900/20 py-2 px-3 rounded-md bg-transparent" onClick={() => setShowAll(x => !x)}>
+    <button className="mt-7 text-primary border-[.5px] font-[500] border-primary py-1 px-5 rounded-md bg-transparent" onClick={() => setShowAll(x => !x)}>
       {showAll ? "Show Less" : "Show All"}
     </button>
   </>);

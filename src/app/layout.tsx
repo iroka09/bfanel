@@ -9,6 +9,7 @@ import GoogleLogin from "@/components/GoogleLogin"
 import { montserrat } from "@/utils/fonts"
 //import { HeroUIProvider } from "@heroui/react";
 import "./globals.css";
+import "./custom.css";
 
 
 
@@ -49,7 +50,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${montserrat.className}`}>
-      <body className="font-sans p-0 m-0 dark:bg-slate-900 dark:text-white/90">
+      <body className="font-sans p-0 m-0 dark:bg-slate-900 dark:text-white/90 text-lg">
         <HeroUIProvider>
           <div className="flex gap-3 w-fit max-w-[80%] my-2 mx-auto rounded-md border border-red-500 text-red-500 p-3 text-sm font-bold skeleton-wave">
             <InfoIcon className="rotate-180" />

@@ -5,13 +5,9 @@ import Link from "next/link"
 import Card from "@/components/Card"
 import Faqs from "@/components/Faqs"
 import About from "@/components/About"
+import Products from "@/components/Products"
 import HeroButtons from "@/components/HeroButtons"
 import ContactForm from "@/components/ContactForm"
-import InfoIcon from "@mui/icons-material/Info"; // About Us
-import InventoryIcon from "@mui/icons-material/Inventory"; // Products
-import BuildIcon from "@mui/icons-material/Build"; // Services
-import LiveHelpIcon from "@mui/icons-material/LiveHelp"; // FAQs
-import ContactsIcon from "@mui/icons-material/Contacts"; // Contact
 import { roboto } from "@/utils/fonts"
 
 
@@ -30,12 +26,10 @@ export default function Home() {
             Bfanel Industries Limited
           </p>
           <p className="inline-block mt-4 text-md">
-            Your <span className="text-cyan-400">Trusted</span> Partner in Electrical & Plumbing Piping Systems. <br />
+            Your <span className="text-secondary font-bold">Trusted</span> Partner in Electrical & Plumbing Piping Systems. <br />
             Specializes in the production of top-quality plumbing and electrical conduit pipes. Our mission is to deliver durable, innovative, and environmentally friendly piping solutions while ensuring customer satisfaction. Our vision is to be a global leader in the piping industry through excellence and innovation.
           </p>
-          <div className="pt-3">
-            <HeroButtons />
-          </div>
+          <HeroButtons />
         </div>
         {/*<div className="md:max-h-[300px] overflow-hidden">
           <Image src={bfanelPic} alt="Bfanel pipes sample" className="max-h-full object-fit" />
@@ -45,13 +39,13 @@ export default function Home() {
       <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-2">
         <div>
           {/*" About Us "*/}
-          <section id="about" className="bg-gray-100 py-5">
+          <section id="about" className="bg-gray-200 dark:bg-slate-800 py-5">
             <div id="about" className="container">
               <About />
             </div>
           </section>
           {/*" Video "*/}
-          <section id="video" className="mb-8">
+          <section id="video" className="py-5">
             <YouTube
               id="Bkg9yt2FJGc"
               title="B-Fanel Industries"
@@ -59,26 +53,14 @@ export default function Home() {
           </section>
 
           {/*" Products "*/}
-          <section id="products" className="bg-cyan-500  text-slate-900/90 py-16">
-            <div className="container">
-              <h2 className="text-3xl font-bold text-slate-900 mb-6"><InventoryIcon className="text-4xl" /> Our Products</h2>
-              <div className="flex flex-wrap gap-3 md:*:max-w-[45%]">
-                <Card>
-                  <h3 className="text-xl font-bold text-slate-900">Plumbing Pipes</h3>
-                  <p className="mt-2">High-quality pipes designed for efficient water flow and plumbing systems.</p>
-                </Card>
-                <Card>
-                  <h3 className="text-xl font-bold text-slate-900">Electrical Conduit Pipes</h3>
-                  <p className="mt-2">Durable pipes for safe and efficient electrical wiring installations.</p>
-                </Card>
-              </div>
-            </div>
+          <section id="products" className="bg-secondary  text-slate-900/90 py-16">
+            <Products />
           </section>
 
           {/*" Services "*/}
-          <section id="services" className="pt-16">
+          {/*   <section id="services" className="pt-16">
             <div className="container">
-              <h2 className="text-3xl font-bold text-primary mb-6"><BuildIcon className="text-4xl" /> Our Services</h2>
+              <h2 className="text-3xl font-bold text-primary mb-6 uppercase">Our Services</h2>
               <Card>
                 <ul className="space-y-4">
                   <li>✔ Custom Pipe Manufacturing</li>
@@ -88,7 +70,7 @@ export default function Home() {
               </Card>
               <hr className="border border-black/10 mt-16" />
             </div>
-          </section>
+          </section>*/}
 
 
           {/*" Certifications "*/}
@@ -104,7 +86,7 @@ export default function Home() {
           {/*" Testimonials "*/}
           <section className="py-16">
             <div className="container">
-              <h2 className="text-3xl font-bold text-primary mb-6">What Our Clients Say</h2>
+              <h2 className="text-2xl font-bold text-primary mb-6 uppercase">What Our Clients Say</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <Card>
                   <p>"B-Fanel pipes are the most reliable on the market."</p>
@@ -119,33 +101,36 @@ export default function Home() {
           </section>
         </div>
         <div>
-          {/*" Careers "*/}
+          {/*" Join us"*/}
           <section className="relative career-background py-16">
-            <div className="absolute inset-0 bg-gradient-to-b from-black/90 from-40% via-black/85 via-70% to-black/70"></div>
+            <div className="absolute inset-0 bg-gradient-to-b from-black/80 from-40% via-black/70 via-70% to-black/40"></div>
             <div className="container relative z-1">
-              <h2 className="text-3xl font-bold text-white mb-6">Join Our Team</h2>
+              <h2 className="text-2xl font-bold text-white mb-6 uppercase">Join Our Team</h2>
               <p className="text-lg text-white/80">
-                We're always looking for talented individuals to join our growing team. Send your CV to <Link href="mailto:careers@bfanelindustries.com" className="text-cyan-200 underline underline-offset-2">info@bfanelindustries.com</Link>
+                We're always looking for talented individuals to join our growing team. Send your CV to <Link href="mailto:careers@bfanelindustries.com" className="text-secondary underline underline-offset-2">info@bfanelindustries.com</Link>
               </p>
             </div>
           </section>
 
           {/*" Faqs "*/}
-          <section id="faqs" className="py-16 bg-cyan-500 text-slate-800">
+          <section id="faqs" className="py-16 bg-secondary text-slate-800">
             <div className="container">
-              <h2 className="text-3xl font-bold text-slate-900 mb-6"><LiveHelpIcon className="text-4xl" /> Frequently Asked Questions</h2>
+              <h2 className="text-2xl font-bold text-primary mb-6 uppercase">Frequently Asked Questions</h2>
               <Faqs />
             </div>
           </section>
 
           {/*" Contact Us "*/}
           <section id="contact" className="py-16">
-            <div className="container">
-              <h2 className="text-3xl font-bold text-primary mb-6"><ContactsIcon className="text-4xl" /> Contact Us</h2>
-              <p className="mb-4">Location: At NO.16 Kilometer 10 Orlu-Ihiala road, Awo-Idemili, Imo state.</p>
-              <p className="mb-4">Phone: <Link href="tel:+234-703-845-0694" className="underline underline-offset-2">+234-703-845-0694</Link></p>
+            <div className="container [&_strong]:text-primary [&_label]:text-primary">
+              <h2 className="text-2xl font-bold text-primary mb-6 uppercase">Contact Us</h2>
               <p className="mb-4">
-                Email: <Link href="mailto: info@bfanelindustries.com" className="underline underline-offset-2">info@bfanelindustries.com</Link>
+                <strong>Location:</strong> At NO.16 Kilometer 10 Orlu-Ihiala road, Awo-Idemili, Imo state.
+              </p>
+              <p className="mb-4">
+                <strong>Phone:</strong> <Link href="tel:+234-703-845-0694" className="underline underline-offset-2">+234-703-845-0694</Link></p>
+              <p className="mb-4">
+                <strong>Email:</strong> <Link href="mailto: info@bfanelindustries.com" className="underline underline-offset-2">info@bfanelindustries.com</Link>
               </p>
               <ContactForm />
             </div>

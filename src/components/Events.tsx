@@ -2,8 +2,11 @@
 
 import { useEffect } from "react"
 
+
+const isDev = process.env.NODE_ENV==="development"
+
 export default function App() {
   useEffect(() => {
-    window.eruda?.init()
+  isDev &&  window.eruda?.init()
   }, [])
 }

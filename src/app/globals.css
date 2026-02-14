@@ -3,39 +3,9 @@
 @tailwind utilities;
 
 
+
+
 .container {
   @apply px-5 mx-auto
 }
 
-.bg-primary {
-  @apply bg-slate-900
-}
-
-.text-primary {
-  @apply text-slate-900 dark:text-white
-}
-
-.text-secondary {
-  @apply text-slate-900/90 dark:text-white/90
-}
-
-.career-background {
-  background-image:url(/logo_low.png);
-  background-position:0px -60px;
-}
-
-.skeleton-wave{
-  background: linear-gradient(135deg, transparent, rgba(255,0,0,0.1), rgba(255,0,0,0.2) 85%, transparent);
-  animation: wave-skeleton 3s infinite linear;
-  background-repeat: no-repeat;
-  background-size: 200% 100%;
-}
-
-@keyframes wave-skeleton{
-  0%{
-    background-position: 200% 0%;
-  }
-  30%, 100%{
-    background-position: -100% 0;
-  }
-}
