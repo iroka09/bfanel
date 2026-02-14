@@ -30,7 +30,7 @@ export default function Home() {
             Bfanel Industries Limited
           </p>
           <p className="inline-block mt-4 text-md">
-            Your <span className="text-cyan-400">Trusted</span> Partner in Electrical & Plumbing Piping Systems. <br/>
+            Your <span className="text-cyan-400">Trusted</span> Partner in Electrical & Plumbing Piping Systems. <br />
             Specializes in the production of top-quality plumbing and electrical conduit pipes. Our mission is to deliver durable, innovative, and environmentally friendly piping solutions while ensuring customer satisfaction. Our vision is to be a global leader in the piping industry through excellence and innovation.
           </p>
           <div className="pt-3">
@@ -45,8 +45,10 @@ export default function Home() {
       <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-2">
         <div>
           {/*" About Us "*/}
-          <section id="about" className="container  bg-slate-100">
-            <About />
+          <section id="about" className="bg-gray-100 py-5">
+            <div id="about" className="container">
+              <About />
+            </div>
           </section>
           {/*" Video "*/}
           <section id="video" className="mb-8">

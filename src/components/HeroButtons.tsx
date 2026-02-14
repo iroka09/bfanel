@@ -28,7 +28,7 @@ const shopNowLink = `mailto: info@bfanelindustries.com?subject=${subject}&body=$
 export default function HeroButtons() {
   console.log(shopNowLink)
   return (
-    <div className="space-y-3">
+    <div className="flex flex-col md:flex-row gap-3">
       <Link
         href={shopNowLink}
         className="inline-block px-5 py-2 text-xl bg-primary dark:bg-white text-white dark:text-slate-900 shadow-md rounded-full hover:opacity-80 transition active:translate-y-[5px] w-full"
