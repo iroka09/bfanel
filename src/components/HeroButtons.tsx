@@ -1,6 +1,6 @@
 
 import Link from "next/link"
-
+import LearnMoreButton from "@/components/LearnMore"
 
 
 const subject = "INQUIRY ABOUT YOUR PRODUCTS"
@@ -34,12 +34,7 @@ export default function HeroButtons() {
       >
         Shop Now
       </Link>
-      <Link
-        href="/#about"
-        className="inline-block px-5 py-2 text-xl border border-secondary dark:border-white text-secondary dark:text-white rounded-full hover:bg-secondary hover:text-white transition active:translate-y-[5px] w-full font-[600]"
-      >
-        Learn More
-      </Link>
+     <LearnMoreButton/>
     </div>
   )
 }

@@ -20,6 +20,7 @@ export default function Navbar({ children }) {
         <div className="relative z-[100]">
           <Drawer.Overlay className="fixed inset-0 bg-black/40" />
           <Drawer.Content className="fixed left-0 top-0 h-full w-[80%] bg-white dark:bg-black text-primary p-6 mobile flex flex-col justify-between">
+            <Drawer.Title className="screen-reader">Drawer Navs</Drawer.Title>
             <Nav />
             <div className="flex justify-center">
               <SocialMediaContacts />

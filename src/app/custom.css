@@ -18,6 +18,11 @@
   background-position: center;
 }
 
+.contact-us-background {
+  background-image: url(/contact_us.jpg);
+  background-position: center;
+}
+
 .skeleton-wave {
   background: linear-gradient(135deg, transparent, rgba(255, 0, 0, 0.1), rgba(255, 0, 0, 0.2) 85%, transparent);
   animation: wave-skeleton 3s infinite linear;

@@ -4,7 +4,6 @@ import Script from "next/script"
 import InfoIcon from "@mui/icons-material/Info";
 import Events from "@/components/Events"
 import Header from "@/components/Header"
-import Footer from "@/components/Footer"
 import GoogleLogin from "@/components/GoogleLogin"
 import { lora, lato,openSans } from "@/utils/fonts"
 //import { HeroUIProvider } from "@heroui/react";
@@ -31,7 +30,7 @@ export function generateMetadata(): Metadata {
     openGraph: {
       images: [
         {
-          url: "/logo_high.png",
+          url: "/bfanel.jpg",
           alt: "website's logo"
         }
       ],
@@ -56,7 +55,6 @@ export default function RootLayout({
         </div>
         <Header />
         {children}
-        <Footer />
         <Events />
         {globalThis.window && <GoogleLogin />}
         {isDev && (

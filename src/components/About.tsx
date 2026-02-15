@@ -14,14 +14,14 @@ export default function About() {
   return (
     <div className="flex flex-col md:flex-row gap-5">
       <AboutCard
-        imageSrc="/ADMIN_BLOCK.jpg"
         title="About Us"
+        imageSrc="/ADMIN_BLOCK.jpg"
         body="B-Fanel Industries specializes in the production of top-quality plumbing and electrical conduit pipes. Our mission is to deliver durable, innovative, and environmentally friendly piping solutions while ensuring customer satisfaction. Our vision is to be a global leader in the piping industry through excellence and innovation."
       />
 
       <AboutCard
-        imageSrc="/bfanel.jpg"
         title="Our Expertise"
+        imageSrc="/images-2.jpg"
         body="With years of experience in the industry, we specialize in a wide range of sizes and specifications to accommodate various requirements. Our team of skilled professionals works tirelessly to innovate and improve our manufacturing processes, ensuring that our customers receive the best products available on the market."
       />
     </div>

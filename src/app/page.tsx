@@ -9,7 +9,7 @@ import Products from "@/components/Products"
 import HeroButtons from "@/components/HeroButtons"
 import ContactForm from "@/components/ContactForm"
 import Testimonials from "@/components/Testimonials"
-//import { lato } from "@/utils/fonts"
+import Footer from "@/components/Footer"
 
 
 
@@ -20,16 +20,20 @@ export default function Home() {
     <main className="[&_h2]:font-open_sans">
       {/*" Hero Section "*/}
       <section className="flex flex-col space-y-5 md:flex-row pt-2 pb-10 md:px-5 md:gap-2">
-        <div className="container text-primary md:pt-5 space-y-5 py-5 text-center">
-          {<Image src="/logo_high.png" alt="bfanel logo" className="block mx-auto mb-2" width="200" height="100" />}
-          <p className="text-3xl uppercase font-[700] font-open_sans">
-            Bfanel Industries Limited
-          </p>
-          <p className="inline-block mt-4 text-md">
-            Your <span className="text-secondary-fixed font-bold">Trusted</span> Partner in Electrical & Plumbing Piping Systems. <br />
-            Specializes in the production of top-quality plumbing and electrical conduit pipes. Our mission is to deliver durable, innovative, and environmentally friendly piping solutions while ensuring customer satisfaction.
-          </p>
-          <HeroButtons />
+        <div className="container text-primary md:pt-5 space-y-5 py-5 text-center flex flex-col md:flex-row-reverse *:flex-1 gap-2">
+          <div className="relative w-fill aspect-square">
+            {<Image src="/bfanel.jpg" alt="bfanel logo" className="block mx-auto mb-2 object-contain" fill />}
+          </div>
+          <div>
+            <p className="text-3xl uppercase font-[700] font-open_sans">
+              Bfanel Industries Limited
+            </p>
+            <p className="inline-block py-3 text-md">
+              Your <span className="text-secondary-fixed font-bold">Trusted</span> Partner in Electrical & Plumbing Piping Systems. <br />
+              Specializes in the production of top-quality plumbing and electrical conduit pipes. Our mission is to deliver durable, innovative, and environmentally friendly piping solutions while ensuring customer satisfaction.
+            </p>
+            <HeroButtons />
+          </div>
         </div>
         {/*<div className="md:max-h-[300px] overflow-hidden">
           <Image src={bfanelPic} alt="Bfanel pipes sample" className="max-h-full object-fit" />
@@ -100,7 +104,7 @@ export default function Home() {
             <div className="container relative z-1">
               <h2 className="text-2xl font-bold text-white mb-6 uppercase">Join Our Team</h2>
               <p className="text-lg text-white/80">
-                We're always looking for talented individuals to join our growing team. Send your CV to <Link href="mailto:careers@bfanelindustries.com" className="text-secondary underline underline-offset-2">info@bfanelindustries.com</Link>
+                We're always looking for talented individuals to join our growing team. Send your CV to: <Link href="mailto:careers@bfanelindustries.com" className="text-secondary-light underline underline-offset-2">info@bfanelindustries.com</Link>
               </p>
             </div>
           </section>
@@ -112,12 +116,10 @@ export default function Home() {
               <Faqs />
             </div>
           </section>
-
-          {/*" Contact Us "*/}
-          <section id="contact" className="py-16">
+          <div className="contact-us-background bg-slate-800">
             <ContactForm />
-          </section>
-
+            <Footer />
+          </div>
         </div>
       </div>
     </main>

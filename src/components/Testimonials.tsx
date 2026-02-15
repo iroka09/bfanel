@@ -81,7 +81,7 @@ export default function TestimonialCarousel() {
         //EffectCube, 
         EffectCoverflow,
       ]}
-      speed={800}
+      speed={400}
       //  navigation={true}
       spaceBetween={20}
       autoHeight
@@ -91,8 +91,8 @@ export default function TestimonialCarousel() {
       loop
       className="mySwiper"
       breakpoints={{
-        768: { slidesPerView: 3 },
-        1024: { slidesPerView: 4 },
+        768: { slidesPerView: 2 },
+        1024: { slidesPerView: 3 },
       }}
       /*  
       effect={'cube'}
@@ -108,13 +108,12 @@ export default function TestimonialCarousel() {
       centeredSlides={true}
       slidesPerView={'auto'}
       coverflowEffect={{
-        rotate: 50,
+        rotate: 45,
         stretch: 0,
         depth: 100,
         modifier: 1,
         slideShadows: true,
       }}
-
     >
       {testimonials.map((item, i) => (
         <SwiperSlide key={i}>
