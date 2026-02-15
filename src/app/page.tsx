@@ -27,7 +27,7 @@ export default function Home() {
             Bfanel Industries Limited
           </p>
           <p className="inline-block mt-4 text-md">
-            Your <span className="text-secondary font-bold">Trusted</span> Partner in Electrical & Plumbing Piping Systems. <br />
+            Your <span className="text-secondary-fixed font-bold">Trusted</span> Partner in Electrical & Plumbing Piping Systems. <br />
             Specializes in the production of top-quality plumbing and electrical conduit pipes. Our mission is to deliver durable, innovative, and environmentally friendly piping solutions while ensuring customer satisfaction.
           </p>
           <HeroButtons />
@@ -116,18 +116,7 @@ export default function Home() {
 
           {/*" Contact Us "*/}
           <section id="contact" className="py-16">
-            <div className="container [&_strong]:text-primary [&_label]:text-primary">
-              <h2 className="text-2xl font-bold text-primary mb-6 uppercase">Contact Us</h2>
-              <p className="mb-4">
-                <strong>Location:</strong> At NO.16 Kilometer 10 Orlu-Ihiala road, Awo-Idemili, Imo state.
-              </p>
-              <p className="mb-4">
-                <strong>Phone:</strong> <Link href="tel:+234-703-845-0694" className="underline underline-offset-2">+234-703-845-0694</Link></p>
-              <p className="mb-4">
-                <strong>Email:</strong> <Link href="mailto: info@bfanelindustries.com" className="underline underline-offset-2">info@bfanelindustries.com</Link>
-              </p>
               <ContactForm />
-            </div>
           </section>
 
         </div>

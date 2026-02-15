@@ -1,12 +1,15 @@
 :root {
   --primary: #001832;
+  --primary-fixed: #001832;
   --secondary: hsl(193, 81%, 41%);
+  --secondary-fixed: hsl(193, 81%, 41%);
+  --secondary-light: hsl(193, 81%, 65%);
   --secondary-dark: hsl(193, 81%, 25%);
 }
 
 :root.dark {
   --primary: white;
-  --secondary: #0F7490;
+  --secondary: hsl(193, 81%, 25%);
 }
 
 

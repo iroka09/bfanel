@@ -3,7 +3,6 @@
 import { useState, useEffect, type ReactNode } from "react"
 import Link from "next/link"
 import Image from "next/image"
-import Collapse from "@mui/material/Collapse"
 import Menu from "@mui/icons-material/Menu"
 import Close from "@mui/icons-material/Close"
 import PaletteIcon from "@mui/icons-material/Palette"
@@ -13,12 +12,11 @@ import CheckIcon from "@mui/icons-material/Check"
 import DarkModeIcon from "@mui/icons-material/DarkMode"
 import ClickAwayListener from "@mui/material/ClickAwayListener"
 import { useHeadroom } from "@mantine/hooks"
-import { Spin as Hamburger } from 'hamburger-react'
-
+import DrawerWithIcon from "@/components/Drawer"
+import Nav from "@/components/Nav"
 
 
 export default function App(): ReactNode {
-  const [inCollapse, setInCollapse] = useState(false)
   const pinned = useHeadroom({ fixedAt: 120 })
   return (<>
     <header className={`sticky top-0 inset-x-0 pr-2 py-1 flex justify-between items-center gap-2 min-w-full border-y border-slate-900/20 z-50 transition-transform duration-300 bg-white/50 dark:bg-black/30 backdrop-blur-md ${pinned ? "translate-y-0" : "-translate-y-full"}`}>
@@ -31,37 +29,10 @@ export default function App(): ReactNode {
       </div>
       <div className="flex gap-4 items-center">
         <ThemeButton />
-        {/*<button className="md:hidden *:text-4xl" onClick={() => setInCollapse(x => !x)}>
-          {inCollapse ? <Close className="!text-3xl" /> : <Menu className="icon !text-3xl" />}
-        </button>*/}
-         <Hamburger toggled={inCollapse} toggle={setInCollapse} />
+        <DrawerWithIcon />
       </div>
     </header>
-    <div className="md:hidden mobile">
-      <Collapse in={inCollapse} unmountOnExit className="bg-cyan-500">
-        <Nav />
-      </Collapse>
-    </div>
   </>)
-}
-
-function Nav(): ReactNode {
-  return (
-    <nav>
-      <ul className="flex p-5 flex-col md:flex-row md:space-x-5">
-        {"About Us, Products, Services, FAQs, Contact".split(/,\s*/).map((x, i) => (
-          <li key={i}>
-            <Link
-              href={`#${x.split(/\s+/)[0].toLowerCase()}`}
-              className="block hover:[.mobile_&]:bg-black/10 [.mobile_&]:text-slate-900 text-center [.mobile_&]:font-bold [.mobile_&]:py-3 [.mobile_&]:text-xl"
-            >
-              {x}
-            </Link>
-          </li>
-        ))}
-      </ul>
-    </nav>
-  )
 }
 
 

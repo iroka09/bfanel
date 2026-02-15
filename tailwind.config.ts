@@ -12,10 +12,13 @@ export default {
       colors: {
         primary: {
           DEFAULT: "var(--primary)",
+          fixed: "var(--primary-fixed)",
           dark: "var(--primary-dark)"
         },
         secondary: {
           DEFAULT: "var(--secondary)",
+          fixed: "var(--secondary-fixed)",
+          light: "var(--secondary-light)",
           dark: "var(--secondary-dark)"
         }
       },

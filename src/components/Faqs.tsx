@@ -9,7 +9,7 @@ import Card from "@/components/Card"
 
 const faqs = [
   { question: "What types of pipes do you manufacture?", answer: "We manufacture plumbing pipes and electrical conduit pipes for various applications." },
-  { question: "Where are you located?", answer: "We are located in Amaebu, Orsu LGA, Imo State, Nigeria." },
+  { question: "Where are you located?", answer: "At NO.16 Kilometer 10 Orlu-Ihiala road, Awo-Idemili, Imo state." },
   { question: "What materials are used for your pipes?", answer: "Our pipes are made from high-quality PVC, Calcium, and other durable materials." },
   { question: "Do you offer custom pipe designs?", answer: "Yes, we provide custom designs to meet unique client requirements." },
   { question: "Are your pipes environmentally friendly?", answer: "Yes, our pipes are designed to be recyclable and environmentally sustainable." },
@@ -37,25 +37,26 @@ export default function FAQs() {
     setExpanded((prev) => (prev === index ? false : index));
   };
   return (<>
-    <div className="max-w-4xl mx-auto py-5 space-y-3">
+    <div className="max-w-4xl mx-auto py-5 divide-y divide-black/30">
       {faqs.slice(0, showAll ? undefined : 4).map((faq, index) => (
-        <Card
+        <div
           key={index}
+          className="text-primary py-5"
         >
           <div
             onClick={() => handleExpand(index)}
             className="flex justify-between gap-3"
           >
-            <h2 className="text-primary font-bold text-lg">{faq.question}</h2>
-            <span className="*:text-primary text-3xl">
+            <h2 className="font-semibold text-md">{faq.question}</h2>
+            <span className="text-3xl">
               {expanded === index ? <ExpandLessIcon /> : <ExpandMoreIcon />
               }
             </span>
           </div>
           <Collapse in={expanded === index} unmountOnExit>
-            <p className="block mt-4 text-slate-900/80">{faq.answer}</p>
+            <p className="block mt-4">{faq.answer}</p>
           </Collapse>
-        </Card>
+        </div>
       ))}
     </div>
     <button className="mt-7 text-primary border-[.5px] font-[500] border-primary py-1 px-5 rounded-md bg-transparent" onClick={() => setShowAll(x => !x)}>
