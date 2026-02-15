@@ -11,6 +11,7 @@ import {
 } from "swiper/modules"
 import Image from "next/image"
 import Card from "@/components/Card"
+import { FaQuoteLeft } from "react-icons/fa";
 import "swiper/css"
 import "swiper/css/pagination"
 import "swiper/css/navigation"
@@ -119,9 +120,14 @@ export default function TestimonialCarousel() {
         <SwiperSlide key={i}>
           <Card className="bg-white bg-slate-700 pt-3 pb-[50px]" noPadding disableAnimation>
             <div className="mt-4 px-3 pb-3">
-              <p className="text-sm">{item.message}</p>
-              <div className="mt-4 text-md italic text-bold">
-                ~ {item.name} 
+              <p className="text-md">
+                <FaQuoteLeft className="inline-block text-4xl pr-3" />
+                <span className="">
+                  {item.message}
+                </span>
+              </p>
+              <div className="mt-4 text-sm italic font-semibold">
+                ~ {item.name}
               </div>
             </div>
             <div className="w-full h-[250px] relative">

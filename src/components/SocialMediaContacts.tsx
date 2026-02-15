@@ -38,7 +38,7 @@ export default function Social() {
         <Link
           key={url}
           href={url}
-          className="border rounded-full p-2 aspect-square border-primary dark:bg-black/80 text-primary hover:bg-slate-500/30 [.always-white_&]:!text-white [.always-white_&]:!border-white"
+          className="border rounded-full p-2 aspect-square border-primary text-primary hover:bg-slate-300/40 [.always-white_&]:!text-white [.always-white_&]:!border-white"
         >
           {icon}
         </Link>

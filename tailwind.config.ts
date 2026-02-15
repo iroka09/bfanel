@@ -22,6 +22,12 @@ export default {
           dark: "var(--secondary-dark)"
         }
       },
+      fontFamily: {
+        // This matches the variable names defined in layout.js
+        lora: ['var(--font-lora)', 'serif'],
+        lato: ['var(--font-lato)', 'sans-serif'],
+        open_sans: ['var(--font-open-sans)', 'sans-serif'],
+      },
     },
   },
   plugins: [],

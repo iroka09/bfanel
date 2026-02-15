@@ -9,7 +9,7 @@ import Products from "@/components/Products"
 import HeroButtons from "@/components/HeroButtons"
 import ContactForm from "@/components/ContactForm"
 import Testimonials from "@/components/Testimonials"
-import { roboto } from "@/utils/fonts"
+//import { lato } from "@/utils/fonts"
 
 
 
@@ -17,13 +17,12 @@ import { roboto } from "@/utils/fonts"
 
 export default function Home() {
   return (
-    <main className="">
-
+    <main className="[&_h2]:font-open_sans">
       {/*" Hero Section "*/}
       <section className="flex flex-col space-y-5 md:flex-row pt-2 pb-10 md:px-5 md:gap-2">
         <div className="container text-primary md:pt-5 space-y-5 py-5 text-center">
           {<Image src="/logo_high.png" alt="bfanel logo" className="block mx-auto mb-2" width="200" height="100" />}
-          <p className={"text-3xl uppercase font-black " + roboto.className}>
+          <p className="text-3xl uppercase font-[700] font-open_sans">
             Bfanel Industries Limited
           </p>
           <p className="inline-block mt-4 text-md">
@@ -54,7 +53,7 @@ export default function Home() {
           </section>
 
           {/*" Products "*/}
-          <section id="products" className="bg-secondary  text-slate-900/90 py-16">
+          <section id="products" className="bg-secondary text-slate-900/90 py-16 rounded-t-4xl">
             <Products />
           </section>
 
@@ -116,7 +115,7 @@ export default function Home() {
 
           {/*" Contact Us "*/}
           <section id="contact" className="py-16">
-              <ContactForm />
+            <ContactForm />
           </section>
 
         </div>

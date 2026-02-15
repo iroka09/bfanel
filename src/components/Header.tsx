@@ -19,7 +19,7 @@ import Nav from "@/components/Nav"
 export default function App(): ReactNode {
   const pinned = useHeadroom({ fixedAt: 120 })
   return (<>
-    <header className={`sticky top-0 inset-x-0 pr-2 py-1 flex justify-between items-center gap-2 min-w-full border-y border-slate-900/20 z-50 transition-transform duration-300 bg-white/50 dark:bg-black/30 backdrop-blur-md ${pinned ? "translate-y-0" : "-translate-y-full"}`}>
+    <header className={`sticky top-0 inset-x-0 pr-2 py-1 flex justify-between items-center gap-2 min-w-full z-50 transition-transform duration-300 bg-white/50 dark:bg-black/30 backdrop-blur-md shadow-md ${pinned ? "translate-y-0" : "-translate-y-full"}`}>
       <Link href="/" className="flex items-center">
         <Image src="/logo_low.png" width={60} height={20} alt="logo" />
         <h1 className="font-bold">B-Fanel Industries</h1>
