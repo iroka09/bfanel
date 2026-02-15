@@ -2,11 +2,11 @@
 "use client"
 
 import { Swiper, SwiperSlide } from "swiper/react"
-import { 
-  Autoplay, 
-  Pagination, 
+import {
+  Autoplay,
+  Pagination,
   //Navigation,
- // EffectCube,
+  // EffectCube,
   EffectCoverflow
 } from "swiper/modules"
 import Image from "next/image"
@@ -79,8 +79,9 @@ export default function TestimonialCarousel() {
         //Navigation,
         //EffectCube, 
         EffectCoverflow,
-        ]}
-    //  navigation={true}
+      ]}
+      speed={800}
+      //  navigation={true}
       spaceBetween={20}
       autoHeight
       //slidesPerView={1}
@@ -92,31 +93,31 @@ export default function TestimonialCarousel() {
         768: { slidesPerView: 3 },
         1024: { slidesPerView: 4 },
       }}
-     /*  
-     effect={'cube'}
-        grabCursor={true}
-        cubeEffect={{
-          shadow: true,
-          slideShadows: true,
-          shadowOffset: 20,
-          shadowScale: 0.94,
-        }}
-        */
-     effect={'coverflow'}
-         centeredSlides={true}
-        slidesPerView={'auto'}
-        coverflowEffect={{
-          rotate: 50,
-          stretch: 0,
-          depth: 100,
-          modifier: 1,
-          slideShadows: true,
-        }}
-       
+      /*  
+      effect={'cube'}
+         grabCursor={true}
+         cubeEffect={{
+           shadow: true,
+           slideShadows: true,
+           shadowOffset: 20,
+           shadowScale: 0.94,
+         }}
+         */
+      effect={'coverflow'}
+      centeredSlides={true}
+      slidesPerView={'auto'}
+      coverflowEffect={{
+        rotate: 50,
+        stretch: 0,
+        depth: 100,
+        modifier: 1,
+        slideShadows: true,
+      }}
+
     >
       {testimonials.map((item, i) => (
         <SwiperSlide key={i}>
-          <Card className="bg-white py-3" noPadding disableAnimation>
+          <Card className="bg-white pt-3 pb-[50px]" noPadding disableAnimation>
             <div className="mt-4 px-3 pb-3">
               <p className="text-sm">{item.message}</p>
               <div className="mt-4 text-xs italic text-semibold">
