@@ -117,14 +117,14 @@ export default function TestimonialCarousel() {
     >
       {testimonials.map((item, i) => (
         <SwiperSlide key={i}>
-          <Card className="bg-white pt-3 pb-[50px]" noPadding disableAnimation>
+          <Card className="bg-white bg-slate-700 pt-3 pb-[50px]" noPadding disableAnimation>
             <div className="mt-4 px-3 pb-3">
               <p className="text-sm">{item.message}</p>
-              <div className="mt-4 text-xs italic text-semibold">
-                ~ {item.name}
+              <div className="mt-4 text-md italic text-bold">
+                ~ {item.name} 
               </div>
             </div>
-            <div className="w-full h-[250px] relative border-y">
+            <div className="w-full h-[250px] relative">
               <Image
                 src={item.avatar}
                 className="object-cover h-full w-full"

@@ -34,7 +34,7 @@ function AboutCard({ imageSrc, title, body, className = "" }) {
     <Card noPadding>
       <div className={"bg-white dark:bg-slate-900 overflow-hidden" + className}>
         <h2 className="font-bold text-xl py-5 uppercase text-center">{title}</h2>
-        <div className="w-full h-[250px] relative border-y">
+        <div className="w-full h-[250px] relative border-y dark:border-y-0">
           <Image
             src={imageSrc}
             //  src={"/logo_high.png"}

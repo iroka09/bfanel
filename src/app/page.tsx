@@ -85,7 +85,7 @@ export default function Home() {
       </section>*/}
 
           {/*" Testimonials "*/}
-          <section className="py-16 bg-neutral-100">
+          <section className="py-16 bg-neutral-100 dark:bg-slate-600">
             <div className="container">
               <h2 className="text-2xl font-bold text-primary mb-6 uppercase">What Our Clients Say</h2>
               <div className="py-0 ">
