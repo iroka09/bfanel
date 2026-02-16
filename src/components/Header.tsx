@@ -14,6 +14,8 @@ import ClickAwayListener from "@mui/material/ClickAwayListener"
 import { useHeadroom } from "@mantine/hooks"
 import DrawerWithIcon from "@/components/Drawer"
 import Nav from "@/components/Nav"
+import Portal from "@/components/Portal"
+
 
 
 export default function App(): ReactNode {
@@ -28,8 +30,17 @@ export default function App(): ReactNode {
         <Nav />
       </div>
       <div className="flex gap-4 items-center">
-        <ThemeButton />
+        <div className="md:hidden">
+          <ThemeButton />
+        </div>
+        <div className="hidden md:block">
+          <Portal>
+            <ThemeButton />
+          </Portal>
+        </div>
+      <div className="md:hidden">
         <DrawerWithIcon />
+      </div>
       </div>
     </header>
   </>)

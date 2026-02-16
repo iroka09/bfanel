@@ -49,7 +49,7 @@ export default function FAQs() {
             onClick={() => handleExpand(index)}
             className="flex justify-between items-center gap-5"
           >
-            <h2 className="font-semibold text-base leading-5">{faq.question}</h2>
+            <h2 className="font-semibold text-lg leading-5">{faq.question}</h2>
             <span className="text-3xl">
               {/*expanded === index ? <ExpandLessIcon /> : <ExpandMoreIcon />
               */}
@@ -61,7 +61,7 @@ export default function FAQs() {
             </span>
           </div>
           <Collapse in={expanded === index} unmountOnExit={false}>
-            <p className="block mt-4 text-base">{faq.answer}</p>
+            <p className="block mt-4">{faq.answer}</p>
           </Collapse>
         </div>
       ))}

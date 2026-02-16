@@ -48,7 +48,7 @@ export default function LearnMore() {
 
 function WriteUp() {
   return (
-    <>
+    <div className="[&_p]:text-slate-700 [&_p]:tex-base [&_p]:dark:text-slate-300 [&_div.border]:border-slate-400/50">
       <p className="leading-relaxed mb-6">
         Our pipes are manufactured using high-grade raw materials and modern production
         processes to ensure durability, smooth water flow, and long-term performance.
@@ -66,7 +66,7 @@ function WriteUp() {
       <div className="grid md:grid-cols-2 gap-8 mt-10">
 
         <div className="p-6 rounded-2xl border">
-          <h3 className="text-xl font-semibold text-gray-900 mb-3">
+          <h3 className="text-xl font-semibold mb-3">
             Wide Range of Sizes
           </h3>
           <p className="">
@@ -77,7 +77,7 @@ function WriteUp() {
         </div>
 
         <div className="p-6 rounded-2xl border">
-          <h3 className="text-xl font-semibold text-gray-900 mb-3">
+          <h3 className="text-xl font-semibold mb-3">
             Reliable Manufacturing
           </h3>
           <p className="">
@@ -87,8 +87,8 @@ function WriteUp() {
           </p>
         </div>
 
-        <div className="p-6 rounded-2xl bg-gray-50 border ">
-          <h3 className="text-xl font-semibold text-gray-900 mb-3">
+        <div className="p-6 rounded-2xl border ">
+          <h3 className="text-xl font-semibold mb-3">
             Multiple Applications
           </h3>
           <p className="">
@@ -99,7 +99,7 @@ function WriteUp() {
         </div>
 
         <div className="p-6 rounded-2xl border">
-          <h3 className="text-xl font-semibold text-gray-900 mb-3">
+          <h3 className="text-xl font-semibold mb-3">
             Customer-Focused Supply
           </h3>
           <p className="">
@@ -109,6 +109,6 @@ function WriteUp() {
           </p>
         </div>
       </div>
-    </>
+    </div>
   )
 }
