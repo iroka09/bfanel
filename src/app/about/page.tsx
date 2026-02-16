@@ -1,9 +1,14 @@
 
 
+import { Metadata } from "next"
 import { AboutUs } from "@/components/LearnMore"
 import Footer from "@/components/Footer"
 import Image from "next/image"
 
+
+export const metadata: Metadata={
+  title: "About"
+}
 
 export default function About() {
   return (
