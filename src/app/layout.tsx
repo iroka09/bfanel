@@ -46,7 +46,11 @@ export function generateMetadata(): Metadata {
     },
     verification: {
       google: "ZulafKF0UqLIJLvCzrwmpvV1iD93LFrJZocTxwY_mas"
-    }
+    },
+    icons: {
+      icon: "/favicon.ico",
+      apple: "/favicon.ico",
+    },
   }
 }
 
