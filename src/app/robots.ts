@@ -1,5 +1,5 @@
 import type { MetadataRoute } from 'next'
-import { web_address } from "@/data"
+import { baseUrl } from "@/data"
 
 
 export default function robots(): MetadataRoute.Robots {
@@ -7,8 +7,8 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: '*',
       allow: '/',
-      disallow: ["/private/","/admin/", "/api/"],
+      disallow: ["/private/", "/admin/", "/api/"],
     },
-    sitemap: web_address + '/sitemap.xml',
+    sitemap: baseUrl + '/sitemap.xml',
   }
 }

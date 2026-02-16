@@ -61,7 +61,7 @@ export default function FAQs() {
             </span>
           </div>
           <Collapse in={expanded === index} unmountOnExit={false}>
-            <p className="block mt-4">{faq.answer}</p>
+            <p className="block mt-4 px-3">{faq.answer}</p>
           </Collapse>
         </div>
       ))}

@@ -23,6 +23,7 @@ type dataType = Array<{
   name: string;
   message: string;
   avatar: string;
+  alt: string;
 }>;
 
 const testimonials: dataType = [
@@ -31,42 +32,49 @@ const testimonials: dataType = [
     message:
       "We’ve been sourcing conduit pipes from B-Fanel for months now and the durability is impressive. Installation has been smooth and we’ve had zero complaints from our technicians.",
     avatar: "/empty_male.jpg",
+    alt: "empty male anonymous",
   },
   {
     name: "Anonymous",
     message:
       "Their plumbing pipes are consistent in quality and sizing. For our building projects, reliability of supply is critical and B-Fanel has delivered every time.",
     avatar: "/empty_female.jpg",
+    alt: "empty female anonymous",
   },
   {
     name: "Anonymous",
     message:
       "Customer service was responsive and professional. Orders were processed quickly and the delivery timeline was accurate. It’s good working with a manufacturer that understands deadlines.",
-    avatar: "/empty_female.jpg",
+    avatar: "/empty_male.jpg",
+    alt: "empty male anonymous",
   },
   {
     name: "Anonymous",
     message:
       "We tested several pipe suppliers before settling on B-Fanel. Their products showed better strength and finishing compared to others in the market.",
     avatar: "/empty_female.jpg",
+    alt: "empty female anonymous",
   },
   {
     name: "Anonymous",
     message:
       "Our electrical installations require dependable conduit pipes, and B-Fanel has met that standard. The consistency across batches makes planning easier for our team.",
     avatar: "/empty_male.jpg",
+    alt: "empty male anonymous",
   },
   {
     name: "Anonymous",
     message:
       "The materials used are clearly high-grade. Even after long-term use in demanding environments, the pipes maintain their structure without cracking or fading.",
     avatar: "/empty_male.jpg",
+    alt: "empty male anonymous",
   },
   {
     name: "Anonymous",
     message:
       "What stands out is their professionalism and packaging. Products arrive clean, well-bundled, and ready for deployment on site without additional sorting.",
     avatar: "/empty_female.jpg",
+    alt: "empty female anonymous",
   }
 ];
 

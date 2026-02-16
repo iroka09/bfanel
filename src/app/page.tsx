@@ -22,12 +22,12 @@ export default function Home() {
       <section className="flex flex-col space-y-5 md:flex-row pt-2 pb-10 md:px-5 md:gap-2">
         <div className="container text-primary md:pt-5 space-y-5 py-5 text-center flex flex-col md:flex-row-reverse *:flex-1 gap-2">
           <div className="relative w-fill aspect-square">
-            {<Image src="/bfanel.jpg" alt="bfanel logo" className="block mx-auto mb-2 object-contain" fill />}
+            {<Image src="/bfanel.jpg" alt="Company's hero image of services" className="block mx-auto mb-2 object-contain" fill />}
           </div>
           <div>
-            <p className="text-3xl uppercase font-[700] font-open_sans">
+            <h1 className="text-3xl uppercase font-[700] font-open_sans">
               Bfanel Industries Limited
-            </p>
+            </h1>
             <p className="inline-block py-3 text-md">
               Your <span className="text-secondary-fixed font-bold">Trusted</span> Partner in Electrical & Plumbing Piping Systems. <br />
               Specializes in the production of top-quality plumbing and electrical conduit pipes. Our mission is to deliver durable, innovative, and environmentally friendly piping solutions while ensuring customer satisfaction.
@@ -90,7 +90,7 @@ export default function Home() {
           {/*" Testimonials "*/}
           <section className="py-16 bg-neutral-100 dark:bg-slate-600">
             <div className="container">
-              <h2 className="text-2xl font-bold text-primary mb-6 uppercase">What Our Clients Say</h2>
+              <h1 className="text-2xl font-bold text-primary mb-6 uppercase">What Our Clients Say</h1>
               <div className="py-0 ">
                 <Testimonials />
               </div>
@@ -102,9 +102,9 @@ export default function Home() {
           <section className="relative career-background py-16">
             <div className="absolute inset-0 bg-gradient-to-b from-black/80 from-40% via-black/70 via-70% to-black/40"></div>
             <div className="container relative z-1">
-              <h2 className="text-2xl font-bold text-white mb-6 uppercase">Join Our Team</h2>
+              <h1 className="text-2xl font-bold text-white mb-6 uppercase">Join Our Team</h1>
               <p className="text-lg text-white/80">
-                We're always looking for talented individuals to join our growing team. Send your CV to: <Link href="mailto:careers@bfanelindustries.com" className="text-secondary-light underline underline-offset-2">info@bfanelindustries.com</Link>
+                We're always looking for talented individuals to join our growing team. Send your CV to: <Link href="mailto: info@bfanelindustries.com" className="text-secondary-light underline underline-offset-2" aria-label="bfanel email">info@bfanelindustries.com</Link>
               </p>
             </div>
           </section>
@@ -112,7 +112,7 @@ export default function Home() {
           {/*" Faqs "*/}
           <section id="faqs" className="py-16 bg-secondary text-slate-800">
             <div className="container">
-              <h2 className="text-2xl font-bold text-primary mb-6 uppercase">Frequently Asked Questions</h2>
+              <h1 className="text-2xl font-bold text-primary mb-6 uppercase">Frequently Asked Questions</h1>
               <Faqs />
             </div>
           </section>
