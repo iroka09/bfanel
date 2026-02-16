@@ -9,5 +9,8 @@ export default function Portal({ children }) {
     setIsClient(true)
     return () => setIsClient(false)
   }, [])
-  return isClient ? createPortal(children, document.body) : null
+  return isClient ?
+    createPortal(children, document.body)
+    :
+    <div className="sr-only">{children}</div>
 }
