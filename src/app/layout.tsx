@@ -5,7 +5,7 @@ import InfoIcon from "@mui/icons-material/Info";
 import Events from "@/components/Events"
 import Header from "@/components/Header"
 import GoogleLogin from "@/components/GoogleLogin"
-import { lora, lato,openSans } from "@/utils/fonts"
+import { lora, lato, openSans } from "@/utils/fonts"
 //import { HeroUIProvider } from "@heroui/react";
 import "./globals.css";
 import "./custom.css";
@@ -16,10 +16,14 @@ const isDev = process.env.NODE_ENV === "development"
 
 
 
+const title = "B-Fanel Industries Limited"
+const description = "B-Fanel Industries specializes in the production of top-quality plumbing and electrical conduit pipes. Our mission is to deliver durable, innovative, and environmentally friendly piping solutions while ensuring customer satisfaction. Our vision is to be a global leader in the piping industry through excellence and innovation."
+
+
 export function generateMetadata(): Metadata {
   return {
-    title: "B-Fanel Industries Limited",
-    description: "B-Fanel Industries specializes in the production of top-quality plumbing and electrical conduit pipes. Our mission is to deliver durable, innovative, and environmentally friendly piping solutions while ensuring customer satisfaction. Our vision is to be a global leader in the piping industry through excellence and innovation.",
+    title,
+    description,
     keywords: ["Pipes production", "Plumbing pipes", "Conduit pipes", "Pipes supply"],
     authors: [
       {
@@ -28,13 +32,20 @@ export function generateMetadata(): Metadata {
       }
     ],
     openGraph: {
+      title,
+      description,
+      url: "https://bfanel.vercel.app",
+      siteName: title,
       images: [
         {
-          url: "/bfanel.jpg",
+          url: "/logo_high.png",
           alt: "website's logo"
         }
       ],
       type: "website"
+    },
+    verification: {
+      google: "ZulafKF0UqLIJLvCzrwmpvV1iD93LFrJZocTxwY_mas"
     }
   }
 }
