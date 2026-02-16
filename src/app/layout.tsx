@@ -17,7 +17,7 @@ const isDev = process.env.NODE_ENV === "development"
 
 
 const title = "B-Fanel Industries Limited"
-const description = "B-Fanel Industries manufactures premium plumbing and electrical conduit pipes. We provide durable, non-corrosive, and sustainable piping solutions for modern construction."
+const description = "-Fanel Industries manufactures durable plumbing and electrical conduit pipes in multiple sizes for residential, commercial, and industrial construction across Nigeria."
 
 
 export function generateMetadata(): Metadata {
