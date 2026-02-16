@@ -11,7 +11,7 @@ import LightModeIcon from "@mui/icons-material/LightMode"
 import CheckIcon from "@mui/icons-material/Check"
 import DarkModeIcon from "@mui/icons-material/DarkMode"
 import ClickAwayListener from "@mui/material/ClickAwayListener"
-import { useHeadroom } from "@mantine/hooks"
+import { useHeadroom, useMediaQuery } from "@mantine/hooks"
 import DrawerWithIcon from "@/components/Drawer"
 import Nav from "@/components/Nav"
 import Portal from "@/components/Portal"
@@ -20,6 +20,7 @@ import Portal from "@/components/Portal"
 
 export default function App(): ReactNode {
   const pinned = useHeadroom({ fixedAt: 120 })
+  const isMediumScreen = useMediaQuery('(min-width: 768px)');
   return (<>
     <header className={`sticky top-0 inset-x-0 pr-2 py-1 flex justify-between items-center gap-2 min-w-full z-50 transition-transform duration-300 bg-white/50 dark:bg-black/30 backdrop-blur-md shadow-md ${pinned ? "translate-y-0" : "-translate-y-full"}`}>
       <Link href="/" className="flex items-center">
@@ -30,17 +31,17 @@ export default function App(): ReactNode {
         <Nav />
       </div>
       <div className="flex gap-4 items-center">
-        <div className="md:hidden">
-          <ThemeButton />
-        </div>
-        <div className="hidden md:block">
-          <Portal>
+        {
+          isMediumScreen ?
+            <Portal>
+              <ThemeButton />
+            </Portal>
+            :
             <ThemeButton />
-          </Portal>
+        }
+        <div className="md:hidden">
+          <DrawerWithIcon />
         </div>
-      <div className="md:hidden">
-        <DrawerWithIcon />
-      </div>
       </div>
     </header>
   </>)
@@ -108,11 +109,11 @@ function ThemeButton() {
   return (<>
     <div className="relative md:fixed md:bottom-10 md:left-3 md:z-10 md:bg-black/50 md:rounded-md md:p-2 md:shadow-lg">
       <button onClick={() => setShow(true)}>
-        <PaletteIcon className="icon text-2xl" />
+        <PaletteIcon className="icon text-2xl md:text-white" />
       </button>
       {show &&
         <ClickAwayListener onClickAway={() => setShow(false)}>
-          <ul className="absolute top-0 right-0 md:top-[initial] md:right-[initial] md:bottom-0 md:left-0 z-1 rounded-md overflow-hidden bg-slate-100 dark:bg-slate-600 *:relative *:pl-4 *:pr-14 *:py-3 text-primary *:whitespace-nowrap *:flex *:gap-3 hover:*:bg-slate-200/80 dark:hover:*:bg-slate-500/50">
+          <ul className="absolute top-0 right-0 md:top-[initial] md:right-[initial] md:bottom-0 md:left-0 z-1 rounded-md overflow-hidden bg-white shadow-lg dark:bg-black *:relative *:pl-4 *:pr-14 *:py-3 text-primary *:whitespace-nowrap *:flex *:gap-3 hover:*:bg-slate-200/80 dark:hover:*:bg-slate-500/50">
             {themeButtons.map((obj, i) => (
               <li
                 key={i}

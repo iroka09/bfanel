@@ -1,17 +1,31 @@
 import { ReactNode } from "react"
 import Link from "next/link"
 
+type NavLink = {
+  label: string;
+  href: string;
+};
+
+const navLinks: NavLink[] = [
+  { label: "About Us", href: "/about" },
+  { label: "Products", href: "/#products" },
+  { label: "Services", href: "/#services" },
+  { label: "FAQs", href: "/#faqs" },
+  { label: "Contact", href: "/#contact" },
+];
+
+
 export default function Nav(): ReactNode {
   return (
     <nav>
       <ul className="flex p-5 flex-col md:flex-row md:space-x-5 [.mobile_&]:divide-y [.mobile_&]:divide-black/20  [.mobile_&]:dark:divide-white/20">
-        {"About Us, Products, Services, FAQs, Contact".split(/,\s*/).map((x, i) => (
-          <li key={i}>
+        {navLinks.map((link) => (
+          <li key={link.label}>
             <Link
-              href={`/#${x.split(/\s+/)[0].toLowerCase()}`}
+              href={link.href}
               className="block hover:[.mobile_&]:bg-black/10 dark:hover:[.mobile_&]:bg-white/10 text-center [.mobile_&]:font-bold [.mobile_&]:py-3 [.mobile_&]:text-lg "
             >
-              {x}
+              {link.label}
             </Link>
           </li>
         ))}

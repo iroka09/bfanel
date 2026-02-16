@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 
 export default function About() {
   return (
-    <div className="flex flex-col md:flex-row gap-5">
+    <div className="grid md:grid-cols-2 gap-5">
       <AboutCard
         title="About Us"
         imageSrc="/ADMIN_BLOCK.jpg"

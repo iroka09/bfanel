@@ -1,13 +1,20 @@
+"use client"
 
-import { useState } from 'react'
+
+import { useState, useEffect } from 'react'
 import { Spin as Hamburger } from 'hamburger-react'
 import { Drawer } from "vaul";
 import Nav from "@/components/Nav"
 import SocialMediaContacts from "@/components/SocialMediaContacts"
+import { usePathname } from "next/navigation"
 
 
 export default function Navbar({ children }) {
   const [showDrawer, setShowDrawer] = useState(false)
+  const pathname = usePathname()
+  useEffect(()=>{
+    setShowDrawer(false)
+  },[pathname])
   return (
     <Drawer.Root direction="left" open={showDrawer} onOpenChange={setShowDrawer}>
       <Drawer.Trigger asChild>
