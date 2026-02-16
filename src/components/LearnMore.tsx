@@ -47,9 +47,9 @@ export default function LearnMore() {
 export function AboutUs({ hideTitle }) {
   return (
     <>
-      {hideTitle || <div className="text-2xl md:text-3xl font-bold mb-6">
+      {hideTitle || <h2 className="text-2xl md:text-3xl font-bold mb-6">
         More About Our Pipe Solutions
-      </div>}
+      </h2>}
       <div className="[&_p]:text-slate-700 [&_p]:tex-base [&_p]:dark:text-slate-300 [&_div.border]:border-slate-400/50">
         <p className="leading-relaxed mb-6">
           Our pipes are manufactured using high-grade raw materials and modern production
