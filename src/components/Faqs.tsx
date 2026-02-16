@@ -2,9 +2,11 @@
 
 import React, { useState } from "react";
 import Collapse from "@mui/material/Collapse";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import ExpandLessIcon from "@mui/icons-material/ExpandLess";
+//import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+//import ExpandLessIcon from "@mui/icons-material/ExpandLess";
 import Card from "@/components/Card"
+import { IoClose } from "react-icons/io5";
+
 
 
 const faqs = [
@@ -45,16 +47,21 @@ export default function FAQs() {
         >
           <div
             onClick={() => handleExpand(index)}
-            className="flex justify-between gap-3"
+            className="flex justify-between items-center gap-5"
           >
-            <h2 className="font-semibold text-md">{faq.question}</h2>
+            <h2 className="font-semibold text-base leading-5">{faq.question}</h2>
             <span className="text-3xl">
-              {expanded === index ? <ExpandLessIcon /> : <ExpandMoreIcon />
+              {/*expanded === index ? <ExpandLessIcon /> : <ExpandMoreIcon />
+              */}
+              {
+                <IoClose
+                  className={`${expanded === index ? "rotate-[0deg]" : "rotate-[-45deg]"} transition text-[20px]`}
+                />
               }
             </span>
           </div>
-          <Collapse in={expanded === index} unmountOnExit>
-            <p className="block mt-4">{faq.answer}</p>
+          <Collapse in={expanded === index} unmountOnExit={false}>
+            <p className="block mt-4 text-base">{faq.answer}</p>
           </Collapse>
         </div>
       ))}

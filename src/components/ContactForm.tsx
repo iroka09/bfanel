@@ -27,7 +27,7 @@ export default function App() {
     <div id="contact" className="!text-white container [&_strong]:txt-primary [&_p_:not(strong)]:text-sm py-5">
       <div className="bg-black/60 rounded-lg px-3 py-5">
         <h2 className="text-2xl font-bold mb-6 uppercase w-fit mx-auto">Contact Us</h2>
-        <p className="mb-4">
+        <p className="mb-4 leading-5">
           <strong>Location:</strong> <span>At NO.16 Kilometer 10 Orlu-Ihiala road, Awo-Idemili, Imo state.</span>
         </p>
         <p className="mb-4">
@@ -72,7 +72,7 @@ export default function App() {
             {message && <span className={`hidden ${touched.message ? "peer-invalid:block" : ""} text-red-500 text-xs`}>Enter your message.</span>}
           </div>
           <div className="md:col-span-2">
-            <button type="submit" className="px-6 py-2 bg-primary dark:bg-secondary transition-all text-white font-bold rounded-md ">
+            <button type="submit" className="px-6 py-2 bg-secondary-dark transition-all text-white font-bold rounded-md ">
               Send Message
             </button>
           </div>
