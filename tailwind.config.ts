@@ -13,6 +13,7 @@ export default {
         primary: {
           DEFAULT: "var(--primary)",
           fixed: "var(--primary-fixed)",
+          light: "var(--primary-light)",
           dark: "var(--primary-dark)"
         },
         secondary: {

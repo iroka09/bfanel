@@ -24,7 +24,7 @@ export default function App(): ReactNode {
   return (<>
     <header className={`sticky top-0 inset-x-0 pr-2 py-1 flex justify-between items-center gap-2 min-w-full z-50 transition-transform duration-300 bg-white/50 dark:bg-black/30 backdrop-blur-md shadow-md ${pinned ? "translate-y-0" : "-translate-y-full"}`}>
       <Link href="/" className="flex items-center">
-        <Image src="/logo_low.png" width={60} height={20} alt="logo" />
+        <Image src="/logo_low.png" width={60} height={20} alt="logo" loading="eager" />
         <h1 className="font-bold">B-Fanel Industries</h1>
       </Link>
       <div className="hidden md:block ml-auto">

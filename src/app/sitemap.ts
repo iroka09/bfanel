@@ -1,15 +1,17 @@
 
 import { MetadataRoute } from 'next'
-import dayjs from 'dayjs'
+import moment from 'moment-timezone'
 import { baseUrl } from '@/data'
 
-
+function getIsoDate(str) {
+  return moment(str, "DD-MMM-YYYY hh:mm:ssa").format('YYYY-MM-DDTHH:mm:ss+01:00')
+}
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
       url: `${baseUrl}/`,
-      lastModified: dayjs().subtract(1, 'hour').format('YYYY-MM-DDTHH:mm:ss+01:00'),
+      lastModified: getIsoDate("15-Feb-2026 10:28:31am"),
       changeFrequency: 'daily',
       priority: 1.0,
       images: [
@@ -31,7 +33,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${baseUrl}/about`,
-      lastModified: dayjs().format('YYYY-MM-DDTHH:mm:ss+01:00'),
+      lastModified: getIsoDate("16-feb-2026 01:40:32pm"),
       changeFrequency: 'daily',
       priority: 0.8,
       images: [
@@ -42,21 +44,32 @@ export default function sitemap(): MetadataRoute.Sitemap {
 }
 
 
+
 /*
+OUTPUT SAMPLE
+
 <?xml version="1.0" encoding="UTF-8"?>
-
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
-  <url>
-    <loc>https://bfanel.vercel.app/</loc>
-    <lastmod>2026-02-16T15:11:16+01:00</lastmod>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://bfanel.vercel.app/about</loc>
-    <lastmod>2026-02-16T15:33:16+01:00</lastmod>
-    <priority>0.8</priority>
-  </url>
-</urlset>
-
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+    <url>
+      <loc>https://bfanel.vercel.app/</loc>
+      <image:image>
+        <image:loc>https://bfanel.vercel.app/ADMIN_BLOCK.jpg</image:loc>
+      </image:image>
+      <image:image>
+        <image:loc>https://bfanel.vercel.app/bfanel.jpg</image:loc>
+      </image:image>
+      <lastmod>2026-02-17T18:24:11+01:00</lastmod>
+      <changefreq>daily</changefreq>
+      <priority>1</priority>
+    </url>
+    <url>
+      <loc>https://bfanel.vercel.app/about</loc>
+      <image:image>
+        <image:loc>https://bfanel.vercel.app/logo_high.png</image:loc>
+      </image:image>
+      <lastmod>2026-02-17T19:24:11+01:00</lastmod>
+      <changefreq>daily</changefreq>
+      <priority>0.8</priority>
+    </url>
+  </urlset>
 */

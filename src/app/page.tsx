@@ -22,10 +22,10 @@ export default function Home() {
       <section className="flex flex-col space-y-5 md:flex-row pt-2 pb-10 md:px-5 md:gap-2">
         <div className="container text-primary md:pt-5 space-y-5 py-5 text-center flex flex-col md:flex-row-reverse *:flex-1 gap-2">
           <div className="relative w-fill aspect-square">
-            {<Image src="/bfanel.jpg" alt="Company's hero image of services" className="block mx-auto mb-2 object-contain" fill />}
+            {<Image src="/bfanel.jpg" alt="Company's hero image of services" className="block mx-auto mb-2 object-contain" fill loading="eager" />}
           </div>
           <div>
-            <h1 className="text-3xl uppercase font-[700] font-open_sans">
+            <h1 className="text-5xl uppercase font-[700] font-open_sans bg-gradient-to-br from-primary from-30% to-cyan-400 bg-clip-text text-transparent">
               Bfanel Industries Limited
             </h1>
             <p className="inline-block py-3 text-md">
@@ -57,7 +57,7 @@ export default function Home() {
           </section>
 
           {/*" Products "*/}
-          <section id="products" className="bg-secondary text-slate-900/90 py-16 rounded-t-4xl">
+          <section id="products" className="bg-primary-light text-white py-16 rounded-t-4xl">
             <Products />
           </section>
 

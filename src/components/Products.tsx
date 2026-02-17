@@ -19,12 +19,12 @@ const datas = [
 
 export default function Products() {
   return (
-    <div className="container !text-black">
-      <h1 className="text-2xl font-bold text-slate-900 mb-6 uppercase">Our Products</h1>
+    <div className="container">
+      <h1 className="text-2xl font-bold mb-6 uppercase">Our Products</h1>
       <div className="flex flex-wrap justify-between gap-3 md:*:max-w-[48%]">
         {datas.map(data => (
           <Card noPadding key={data.title}>
-            <h2 className="text-xl font-bold text-slate-900 p-4">{data.title}</h2>
+            <h2 className="text-xl font-bold p-4">{data.title}</h2>
             <div className="w-full h-[250px] relative">
               <Image
                 src={data.imageSrc}
