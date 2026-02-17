@@ -38,7 +38,7 @@ export function generateMetadata(): Metadata {
       siteName: title,
       images: [
         {
-          url: "/logo_high.png",
+          url: "/bfanel.jpg",
           alt: "website's logo"
         }
       ],
