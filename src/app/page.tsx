@@ -57,7 +57,7 @@ export default function Home() {
           </section>
 
           {/*" Products "*/}
-          <section id="products" className="bg-primary-light text-white py-16 rounded-t-4xl">
+          <section id="products" className="bg-primary-light text-white">
             <Products />
           </section>
 
@@ -122,6 +122,6 @@ export default function Home() {
           </div>
         </div>
       </div>
-    </main>
+    </main >
   );
 }

@@ -2,7 +2,6 @@
 import Link from "next/link"
 import LearnMoreButton from "@/components/LearnMore"
 
-
 const subject = "INQUIRY ABOUT YOUR PRODUCTS"
 const body = `
 Dear Sales Team,
@@ -25,14 +24,17 @@ Best regards.
 
 const shopNowLink = `mailto: info@bfanelindustries.com?subject=${subject}&body=${encodeURIComponent(body)}`
 
-export default function HeroButtons() {
+
+
+
+export default function  HeroButtons() {
   return (
     <div className="flex flex-col md:flex-row gap-3">
       <Link
         href={shopNowLink}
         className="inline-block px-5 py-2 text-xl text-white shadow-md rounded-full hover:opacity-80 transition active:translate-y-[5px] w-full bg-gradient-to-r from-primary-light to-secondary via-red-900 font-[600]"
       >
-        Shop Now
+        Show Now
       </Link>
       <LearnMoreButton />
     </div>

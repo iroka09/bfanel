@@ -28,6 +28,6 @@ const nextConfig: NextConfig = {
       },
     ]
   },
-  productionBrowserSourceMaps: false, // Prevents searching for these maps in the browser
+  productionBrowserSourceMaps: false, // Prevents searching for these maps in the browser in production env
 };
 export default nextConfig

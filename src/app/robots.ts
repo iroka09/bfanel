@@ -12,3 +12,12 @@ export default function robots(): MetadataRoute.Robots {
     sitemap: baseUrl + '/sitemap.xml',
   }
 }
+
+/*
+User-Agent: *
+Allow: /
+Disallow: /private/
+Disallow: /admin/
+Disallow: /api/
+Sitemap: https://bfanel.vercel.app/sitemap.xml
+*/

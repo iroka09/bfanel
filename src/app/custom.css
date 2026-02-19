@@ -42,3 +42,7 @@
     background-position: -100% 0;
   }
 }
+
+.section {
+ /* clip-path: path('M 0 100 L 0 40 C 50 -10 150 -10 200 40 L 200 100 Z');*/
+}

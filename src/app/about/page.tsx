@@ -1,9 +1,9 @@
 
 
 import { Metadata } from "next"
+import Image from "next/image"
 import { AboutUs } from "@/components/LearnMore"
 import Footer from "@/components/Footer"
-import Image from "next/image"
 
 
 export const metadata: Metadata = {
