@@ -16,6 +16,7 @@
     "@mui/icons-material": "^6.4.3",
     "@mui/material": "^6.4.3",
     "dayjs": "^1.11.19",
+    "google-map-react": "^2.2.5",
     "google-one-tap": "^1.0.6",
     "hamburger-react": "^2.5.2",
     "moment-timezone": "^0.6.0",

@@ -32,7 +32,7 @@ export default function  HeroButtons() {
     <div className="flex flex-col md:flex-row gap-3">
       <Link
         href={shopNowLink}
-        className="inline-block px-5 py-2 text-xl text-white shadow-md rounded-full hover:opacity-80 transition active:translate-y-[5px] w-full bg-gradient-to-r from-primary-light to-secondary via-red-900 font-[600]"
+        className="inline-block px-5 py-2 text-xl text-white shadow-md rounded-full hover:opacity-80 transition active:translate-y-[5px] w-full bg-gradient-to-r from-primary-light to-secondary via-red-900 font-[600] text-center"
       >
         Show Now
       </Link>

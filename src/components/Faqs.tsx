@@ -35,36 +35,40 @@ const faqs = [
 export default function FAQs() {
   const [expanded, setExpanded] = useState(false);
   const [showAll, setShowAll] = useState(false)
-  const handleExpand = (index) => {
-    setExpanded((prev) => (prev === index ? false : index));
+  const handleExpand = (key) => {
+    setExpanded((prev) => (prev === key ? false : key));
   };
   return (<>
     <div className="max-w-4xl mx-auto py-5 divide-y divide-black/30">
-      {faqs.slice(0, showAll ? undefined : 4).map((faq, index) => (
-        <div
-          key={index}
-          className="text-primary py-5"
-        >
+      {faqs.slice(0, showAll ? undefined : 4).map((faq) => {
+       const key = faq.question
+        return (
           <div
-            onClick={() => handleExpand(index)}
-            className="flex justify-between items-center gap-5"
+            key={key}
+            className="text-primary py-5"
           >
-            <h2 className="font-semibold text-lg leading-5">{faq.question}</h2>
-            <span className="text-3xl">
-              {/*expanded === index ? <ExpandLessIcon /> : <ExpandMoreIcon />
+            <div
+              onClick={() => handleExpand(key)}
+              className="flex justify-between items-center gap-5"
+            >
+              <h2 className="font-semibold text-lg leading-5">{faq.question}</h2>
+              <span className="text-3xl">
+                {/*expanded === key ? <ExpandLessIcon /> : <ExpandMoreIcon />
               */}
-              {
-                <IoClose
-                  className={`${expanded === index ? "rotate-[0deg]" : "rotate-[-45deg]"} transition text-[20px]`}
-                />
-              }
-            </span>
+                {
+                  <IoClose
+                    className={`${expanded === key ? "rotate-[0deg]" : "rotate-[-45deg]"} transition text-[20px]`}
+                  />
+                }
+              </span>
+            </div>
+            <Collapse in={expanded === key} unmountOnExit={false}>
+              <p className="block mt-4 px-3">{faq.answer}</p>
+            </Collapse>
           </div>
-          <Collapse in={expanded === index} unmountOnExit={false}>
-            <p className="block mt-4 px-3">{faq.answer}</p>
-          </Collapse>
-        </div>
-      ))}
+        )
+      })
+      }
     </div>
     <button className="mt-7 text-primary border-[.5px] font-[500] border-primary py-1 px-5 rounded-md bg-transparent" onClick={() => setShowAll(x => !x)}>
       {showAll ? "Show Less" : "Show All"}

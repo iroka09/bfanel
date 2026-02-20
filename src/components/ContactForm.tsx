@@ -3,6 +3,40 @@
 import { useState } from "react"
 import Link from "next/link"
 //import Image from "next/image"
+//import GoogleMapReact from 'google-map-react';
+
+
+/*
+const AnyReactComponent = ({ text }) => <div>{text}</div>;
+
+
+function GoogleMap() {
+  const defaultProps = {
+    center: {
+      lat: 10.99835602,
+      lng: 77.01502627
+    },
+    zoom: 11
+  };
+  return (
+    // Important! Always set the container height explicitly
+    <div style={{ height: '100vh', width: '100%' }}>
+      <GoogleMapReact
+        bootstrapURLKeys={{ key: "AIzaSyBBX5fS1Vgtm3tEBs8i75nfr7HjFQRuqqA" }}
+        defaultCenter={defaultProps.center}
+        defaultZoom={defaultProps.zoom}
+      >
+        <AnyReactComponent
+          // lat={59.955413}
+          //  lng={30.337844}
+          text="My Marker"
+        />
+      </GoogleMapReact>
+    </div>
+  );
+}
+*/
+
 
 export default function App() {
   const [name, setName] = useState("")
@@ -25,6 +59,7 @@ export default function App() {
   }
   return (
     <div id="contact" className="!text-white container [&_strong]:txt-primary [&_p_:not(strong)]:text-sm py-5">
+      {/*<GoogleMap />*/}
       <div className="bg-black/60 rounded-lg px-3 py-5">
         <h2 className="text-2xl font-bold mb-6 uppercase w-fit mx-auto">Contact Us</h2>
         <p className="mb-4 leading-5">
