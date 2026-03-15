@@ -22,7 +22,7 @@ export default function LearnMore() {
           <Drawer.Overlay className="fixed inset-0 bg-black/40" />
           <Drawer.Content className="fixed bottom-0 h-[90%] w-full bg-white dark:bg-black text-primary p-5 rounded-t-3xl flex flex-col">
             <Drawer.Handle className="flex-shrink-0" />
-            <div className="w-full py-2 flex justify-end">
+            <div className="w-full py-2 flex justify-end ">
               <Drawer.Close>
                 <IoClose className="text-3xl" />
               </Drawer.Close>
