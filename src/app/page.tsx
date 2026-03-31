@@ -57,7 +57,7 @@ export default function Home() {
           </section>
 
           {/*" Products "*/}
-          <section id="products" className="bg-primary-light text-white">
+          <section id="products" >
             <Products />
           </section>
 
@@ -110,9 +110,9 @@ export default function Home() {
           </section>
 
           {/*" Faqs "*/}
-          <section id="faqs" className="py-16 bg-secondary text-slate-800">
+          <section id="faqs" className="py-16 bg-secondary-dark text-white">
             <div className="container">
-              <h1 className="text-2xl font-bold text-primary mb-6 uppercase">Frequently Asked Questions</h1>
+              <h1 className="text-2xl font-bold mb-6 uppercase">Frequently Asked Questions</h1>
               <Faqs />
             </div>
           </section>
